@@ -1,6 +1,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface Game {
   id: number;
@@ -40,6 +41,15 @@ const GamesSection = () => {
       description: "A space fantasy roguelike where players navigate a universe of floating islands, mythical beasts, and cosmic magic. Each run offers new challenges and discoveries.",
       image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb",
       status: "Coming Soon"
+    },
+    {
+      id: 4,
+      title: "PixelJump",
+      description: "A retro-inspired platformer with modern twists, challenging players with precise jumps and creative level designs.",
+      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
+      status: "Released",
+      playLink: "#",
+      downloadLink: "#"
     }
   ];
   
@@ -152,11 +162,9 @@ const GamesSection = () => {
                     </a>
                   )}
                   
-                  {!activeGame.playLink && !activeGame.downloadLink && (
-                    <span className="px-4 py-2 bg-fantasy-navy/50 backdrop-blur-sm rounded border border-fantasy-purple/20 text-white/70">
-                      Coming Soon
-                    </span>
-                  )}
+                  <Link to={`/games/${activeGame.id}`} className="px-4 py-2 bg-fantasy-purple/20 backdrop-blur-sm rounded border border-fantasy-purple/30 text-white hover:bg-fantasy-purple/30 transition-colors">
+                    View Details & Updates
+                  </Link>
                 </div>
               </div>
             </div>
@@ -179,16 +187,16 @@ const GamesSection = () => {
           
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             {games.map((game) => (
-              <div 
+              <Link 
                 key={game.id}
+                to={`/games/${game.id}`}
                 className={`fantasy-card group transition-all duration-500 ${
                   activeIndex === games.indexOf(game) 
                     ? 'ring-2 ring-fantasy-gold/50 shadow-gold' 
                     : 'hover:shadow-fantasy'
                 }`}
-                onClick={() => setActiveIndex(games.indexOf(game))}
               >
-                <div className="h-40 overflow-hidden">
+                <div className="h-40 overflow-hidden relative">
                   <img 
                     src={game.image} 
                     alt={game.title}
@@ -205,7 +213,7 @@ const GamesSection = () => {
                     {game.description}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -45,7 +45,8 @@ const Index = () => {
       id: 1,
       title: "PixelJump Development Update: New Levels and Power-ups",
       date: "June 15, 2023",
-      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f"
+      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
+      gameId: 4
     },
     {
       id: 2,
@@ -54,6 +55,14 @@ const Index = () => {
       image: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1"
     }
   ];
+  
+  const handlePostClick = (post: typeof recentPosts[0]) => {
+    if (post.gameId) {
+      navigate(`/games/${post.gameId}`);
+    } else {
+      navigate('/blog');
+    }
+  };
   
   return (
     <div className="flex flex-col min-h-screen relative overflow-hidden">
@@ -75,7 +84,7 @@ const Index = () => {
               <div 
                 key={post.id}
                 className="fantasy-card group hover:shadow-fantasy transition-all duration-500 overflow-hidden cursor-pointer"
-                onClick={() => navigate('/blog')}
+                onClick={() => handlePostClick(post)}
               >
                 <div className="flex flex-col sm:flex-row h-full">
                   <div className="sm:w-2/5 h-48 sm:h-auto overflow-hidden relative">
