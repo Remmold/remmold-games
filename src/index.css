@@ -1,58 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 223 26% 15%;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
@@ -61,8 +16,8 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 262 44% 55%;
+    --primary-foreground: 210 40% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -70,32 +25,161 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 48 100% 50%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --ring: 224.3 76.3% 48%;
+    
+    --radius: 0.5rem;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-fantasy-dark text-foreground font-raleway;
+    background-image: url('/background-pattern.webp');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-cinzel;
+  }
+
+  h5, h6 {
+    @apply font-marcellus;
+  }
+}
+
+@layer components {
+  .fantasy-container {
+    @apply px-4 md:px-6 lg:px-8 mx-auto max-w-7xl;
+  }
+  
+  .fantasy-title {
+    @apply font-cinzel font-bold text-3xl md:text-4xl lg:text-5xl text-white relative;
+  }
+  
+  .fantasy-title::after {
+    @apply content-[''] absolute w-1/4 h-0.5 bg-gradient-to-r from-fantasy-gold to-transparent bottom-0 left-0;
+  }
+  
+  .section-title {
+    @apply relative inline-block text-2xl md:text-3xl font-cinzel text-white mb-8 pb-2;
+  }
+  
+  .section-title::after {
+    @apply content-[''] absolute w-full h-0.5 bg-gradient-to-r from-fantasy-gold to-transparent bottom-0 left-0;
+  }
+  
+  .fantasy-card {
+    @apply bg-fantasy-navy bg-opacity-80 backdrop-blur-sm border border-fantasy-purple/20 rounded-lg overflow-hidden;
+    box-shadow: 0 8px 20px -15px rgba(126, 87, 194, 0.5);
+  }
+  
+  .fantasy-button {
+    @apply px-6 py-2.5 rounded-md bg-gradient-to-br from-fantasy-purple to-fantasy-light-purple text-white font-medium transition-all duration-300 shadow-md hover:shadow-lg relative overflow-hidden;
+  }
+  
+  .fantasy-button::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 bg-shimmer-gradient bg-[length:200%_100%] animate-shimmer;
+  }
+  
+  .fantasy-button:hover::before {
+    @apply opacity-100;
+  }
+  
+  .gold-button {
+    @apply px-6 py-2.5 rounded-md bg-gradient-to-br from-fantasy-gold to-fantasy-amber text-fantasy-dark font-medium transition-all duration-300 shadow-md hover:shadow-lg relative overflow-hidden border border-fantasy-amber/40;
+  }
+  
+  .gold-button::before {
+    @apply content-[''] absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-300 bg-shimmer-gradient bg-[length:200%_100%] animate-shimmer;
+  }
+  
+  .gold-button:hover::before {
+    @apply opacity-100;
+  }
+  
+  .ornate-border {
+    position: relative;
+  }
+  
+  .ornate-border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid theme('colors.fantasy.gold');
+    border-left: 2px solid theme('colors.fantasy.gold');
+    opacity: 0.8;
+  }
+  
+  .ornate-border::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-bottom: 2px solid theme('colors.fantasy.gold');
+    border-right: 2px solid theme('colors.fantasy.gold');
+    opacity: 0.8;
+  }
+  
+  .scroll-rune {
+    @apply absolute w-5 h-5 border-2 border-fantasy-gold rounded-full flex items-center justify-center text-xs text-fantasy-gold opacity-80;
+  }
+  
+  .animated-underline {
+    position: relative;
+  }
+  
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: theme('colors.fantasy.gold');
+    transition: width 0.3s ease;
+  }
+  
+  .animated-underline:hover::after {
+    width: 100%;
+  }
+  
+  /* Stylized scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(26, 31, 44, 0.8);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #7E57C2, #9575CD);
+    border-radius: 6px;
+    border: 3px solid rgba(26, 31, 44, 0.8);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #9575CD, #B39DDB);
   }
 }
