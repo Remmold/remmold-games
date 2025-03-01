@@ -30,35 +30,25 @@ interface Game {
   updates: GameUpdate[];
 }
 
-// Mock data - this is just for demonstration purposes
+// This is example data - replace with your actual game data when available
 const gamesData: Game[] = [
   {
     id: 4,
     title: "PixelJump",
     description: "A retro-inspired platformer with modern twists, challenging players with precise jumps and creative level designs.",
     longDescription: "PixelJump combines the charm of classic platformers with modern game design. Navigate through diverse worlds filled with unique obstacles, collect power-ups that transform gameplay, and discover hidden secrets in meticulously crafted pixel art environments. With responsive controls and a gradual difficulty curve, the game welcomes casual players while offering challenges for platformer veterans.",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     status: "Released",
-    playLink: "https://play.example.com/pixeljump",
-    downloadLink: "https://download.example.com/pixeljump",
+    playLink: "#",
+    downloadLink: "#",
     updates: [
       {
         id: 1,
-        title: "[DEMO] PixelJump Development Update: New Levels and Power-ups",
-        content: "This is a demonstration update. In a real project, this would contain actual development progress. We've added 10 new levels in the Crystal Caves world, along with two new power-ups: the Gravity Flip and Time Slow abilities.",
-        date: "June 15, 2023",
+        title: "Example: How to Add Game Updates",
+        content: "This is an example update showing how to add development updates for your game. Replace this with actual updates about PixelJump. Updates can include new features, bug fixes, community events, or any other news related to the game's development.",
+        date: "Current Date",
         links: [
-          { url: "#changelog", label: "Demo Changelog" },
-          { url: "#speedrun", label: "Demo Speedrun Challenge" }
-        ]
-      },
-      {
-        id: 2,
-        title: "[DEMO] Community Level Editor Beta",
-        content: "This is a demonstration update. In a real project, this would contain actual feature announcements. The much-requested level editor is now available in beta! Create your own PixelJump challenges and share them with the community.",
-        date: "May 10, 2023",
-        links: [
-          { url: "#editor-guide", label: "Demo Editor Tutorial" }
+          { url: "#example-link", label: "Example Link" }
         ]
       }
     ]
@@ -131,6 +121,7 @@ const GameDetail = () => {
                 src={game?.image} 
                 alt={game?.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-fantasy-dark/90 md:bg-gradient-to-r md:from-transparent md:to-fantasy-dark"></div>
             </div>

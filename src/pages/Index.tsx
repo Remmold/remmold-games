@@ -43,16 +43,10 @@ const Index = () => {
   const recentPosts = [
     {
       id: 1,
-      title: "[DEMO] PixelJump Development Update: New Levels and Power-ups",
-      date: "June 15, 2023",
-      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
+      title: "How to Add Blog Posts to the RemmoldGames Website",
+      date: "Current Date",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
       gameId: 4
-    },
-    {
-      id: 2,
-      title: "[DEMO] Art Direction in Fantasy Games: Finding Our Visual Style",
-      date: "May 22, 2023",
-      image: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1"
     }
   ];
   
@@ -79,7 +73,7 @@ const Index = () => {
             <h2 className="section-title">Latest Updates</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-10">
             {recentPosts.map((post) => (
               <div 
                 key={post.id}
@@ -92,6 +86,7 @@ const Index = () => {
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
                     />
                   </div>
                   

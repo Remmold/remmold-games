@@ -49,7 +49,7 @@ const Blog = () => {
     };
   }, []);
 
-  // Sample blog post that explains how to add new blog posts
+  // Example blog post that explains how to add new blog posts
   const blogPosts: BlogPost[] = [
     {
       id: 1,
@@ -79,14 +79,32 @@ To add new blog posts to your RemmoldGames website, follow these steps:
 4. Make sure to assign a unique ID to each new blog post.
 5. For images, you can:
    - Use locally stored images in your public folder
-   - Use placeholder.com for testing
-   - Use royalty-free images from sources like Unsplash (with attribution if required)
+   - Use placeholder images for testing
+   - Use royalty-free images from sources like Unsplash, Pexels, or Pixabay
    
 6. Save the file and rebuild your project.
 
-Remember to avoid using copyrighted material without proper licensing, and consider adding a date sorting mechanism as your blog grows.
+IMPORTANT: Avoid using copyrighted material without proper licensing. Always use royalty-free images or images you have permission to use.
+
+To reference a specific game in your blog post, you can add a gameId property to your blog post object. This will make the post clickable and navigate to that game's page when clicked.
+
+Example:
+\`\`\`javascript
+{
+  id: 2,
+  title: "New Features in PixelJump",
+  excerpt: "Check out the latest additions to our platformer game",
+  content: "...",
+  image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+  date: "Month DD, YYYY",
+  author: "Your Name",
+  category: "Updates",
+  readTime: "3 min",
+  gameId: 4
+}
+\`\`\`
       `,
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
       date: "Current Date",
       author: "RemmoldGames",
       category: "Documentation",
@@ -130,6 +148,7 @@ Remember to avoid using copyrighted material without proper licensing, and consi
                     src={post.image} 
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-fantasy-dark/90 via-transparent to-transparent"></div>
                 </div>

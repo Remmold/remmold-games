@@ -20,7 +20,7 @@ const GamesSection = () => {
       id: 4,
       title: "PixelJump",
       description: "A retro-inspired platformer with modern twists, challenging players with precise jumps and creative level designs.",
-      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       status: "Released",
       playLink: "#",
       downloadLink: "#"
@@ -72,6 +72,7 @@ const GamesSection = () => {
                   src={activeGame.image} 
                   alt={activeGame.title}
                   className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-fantasy-dark via-transparent to-transparent"></div>
                 
