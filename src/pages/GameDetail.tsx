@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Download, Calendar, ExternalLink } from 'lucide-react';
@@ -32,82 +31,6 @@ interface Game {
 
 // Mock data - in a real app, this would come from an API or database
 const gamesData: Game[] = [
-  {
-    id: 1,
-    title: "Enchanted Kingdoms",
-    description: "A tactical RPG where players lead a band of heroes through a world of ancient magic and forgotten kingdoms.",
-    longDescription: "Enchanted Kingdoms invites players into a world where magic flows through ancient ruins and forgotten civilizations. As the leader of a diverse band of heroes, you'll forge alliances, discover powerful artifacts, and uncover the secrets that led to the fall of once-great empires. With tactical turn-based combat and a rich narrative driven by your choices, every playthrough offers new adventures and challenges.",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
-    status: "Released",
-    playLink: "https://play.example.com/enchanted-kingdoms",
-    downloadLink: "https://download.example.com/enchanted-kingdoms",
-    updates: [
-      {
-        id: 1,
-        title: "Major Update: New Faction Revealed",
-        content: "We're excited to announce the addition of the Shadowblade Covenant, a secretive faction with unique abilities focused on stealth and subterfuge. This update includes 5 new characters, 8 new quests, and a completely new region to explore.",
-        date: "May 15, 2023",
-        links: [
-          { url: "#patch-notes", label: "Full Patch Notes" },
-          { url: "#trailer", label: "Faction Trailer" }
-        ]
-      },
-      {
-        id: 2,
-        title: "Performance Improvements and Bug Fixes",
-        content: "This update focuses on overall game stability and performance. We've optimized resource loading, fixed several critical bugs in the quest system, and improved AI pathfinding in complex terrain.",
-        date: "April 2, 2023"
-      }
-    ]
-  },
-  {
-    id: la2,
-    title: "Arcane Legacy",
-    description: "A magical puzzle adventure where you control elements to solve ancient mysteries.",
-    longDescription: "Arcane Legacy challenges players to master the four fundamental elements—fire, water, earth, and air—as they explore the mystical chambers of an ancient wizard's tower. Each puzzle requires creative thinking and an understanding of how elements interact with the environment. As you progress, you'll unlock new combinations and discover the story of the tower's creator through magical echoes of the past.",
-    image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-    status: "In Development",
-    playLink: "https://beta.example.com/arcane-legacy",
-    updates: [
-      {
-        id: 1,
-        title: "Beta Access Now Available",
-        content: "We're thrilled to announce that beta testing for Arcane Legacy is now open! The first three chapters of the game are playable, featuring 24 unique puzzles and the foundation of our elemental combination system.",
-        date: "June 8, 2023",
-        links: [
-          { url: "#beta-signup", label: "Join the Beta" }
-        ]
-      },
-      {
-        id: 2,
-        title: "Development Roadmap",
-        content: "Check out our updated development roadmap for Arcane Legacy. We've outlined our plans for the coming months, including new puzzle mechanics, story chapters, and accessibility features.",
-        date: "May 20, 2023",
-        links: [
-          { url: "#roadmap", label: "View Roadmap" }
-        ]
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Celestial Voyagers",
-    description: "A space fantasy roguelike where players navigate a universe of floating islands, mythical beasts, and cosmic magic.",
-    longDescription: "Celestial Voyagers blends space exploration with fantasy elements in a unique roguelike experience. The universe is shattered into floating islands connected by magical ley lines, and populated by both technological wonders and mystical creatures. Each run offers a different configuration of islands, encounters, and treasures, challenging players to adapt their strategy and build effective combinations of technology and magic.",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb",
-    status: "Coming Soon",
-    updates: [
-      {
-        id: 1,
-        title: "Concept Art Reveal",
-        content: "Today we're sharing the first concept art pieces for Celestial Voyagers. These images showcase our vision for the unique blend of space fantasy and mystical elements that will define the game's visual style.",
-        date: "June 1, 2023",
-        links: [
-          { url: "#art-gallery", label: "View Gallery" }
-        ]
-      }
-    ]
-  },
   {
     id: 4,
     title: "PixelJump",
@@ -204,8 +127,8 @@ const GameDetail = () => {
           <div className="md:flex">
             <div className="md:w-1/2 h-64 md:h-auto relative">
               <img 
-                src={game.image} 
-                alt={game.title}
+                src={game?.image} 
+                alt={game?.title}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-fantasy-dark/90 md:bg-gradient-to-r md:from-transparent md:to-fantasy-dark"></div>
@@ -214,20 +137,20 @@ const GameDetail = () => {
             <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-between relative">
               <div>
                 <div className="inline-block px-3 py-1 rounded-full bg-fantasy-navy/60 text-xs text-fantasy-gold mb-3">
-                  {game.status}
+                  {game?.status}
                 </div>
                 
                 <h1 className="text-3xl md:text-4xl font-cinzel text-fantasy-gold mb-4">
-                  {game.title}
+                  {game?.title}
                 </h1>
                 
                 <p className="text-white/80 mb-6">
-                  {game.longDescription || game.description}
+                  {game?.longDescription || game?.description}
                 </p>
               </div>
               
               <div className="flex flex-wrap gap-4 mt-4">
-                {game.downloadLink && (
+                {game?.downloadLink && (
                   <a href={game.downloadLink} className="fantasy-button group">
                     <span className="relative z-10 flex items-center gap-2">
                       <Download size={16} />
@@ -236,15 +159,15 @@ const GameDetail = () => {
                   </a>
                 )}
                 
-                {game.playLink && (
+                {game?.playLink && (
                   <a href={game.playLink} className="gold-button group">
                     <span className="relative z-10">Play Online</span>
                   </a>
                 )}
                 
-                {!game.playLink && !game.downloadLink && (
+                {!game?.playLink && !game?.downloadLink && (
                   <span className="px-4 py-2 bg-fantasy-navy/50 backdrop-blur-sm rounded border border-fantasy-purple/20 text-white/70">
-                    {game.status}
+                    {game?.status}
                   </span>
                 )}
               </div>
@@ -257,7 +180,7 @@ const GameDetail = () => {
       <section className="fantasy-container pb-20">
         <h2 className="section-title mb-8">Development Updates</h2>
         
-        {game.updates.length > 0 ? (
+        {game?.updates && game.updates.length > 0 ? (
           <div className="space-y-6">
             {game.updates.map((update) => (
               <div key={update.id} className="fantasy-card group hover:shadow-fantasy transition-all duration-500">
