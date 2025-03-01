@@ -35,20 +35,13 @@ const Navbar = () => {
       href: '#games',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'PixelJump', href: '#games' },
-        { name: 'Enchanted Kingdoms', href: '#games' },
-        { name: 'Arcane Legacy', href: '#games' },
-        { name: 'Celestial Voyagers', href: '#games' }
+        { name: 'PixelJump', href: '#games' }
       ]
     },
     { name: 'Collaborators', href: '#collaborators' },
     { name: 'Blog', onClick: handleBlogClick },
     { name: 'Contact', href: '#contact' }
   ];
-
-  const toggleGamesDropdown = () => {
-    setGamesDropdownOpen(!gamesDropdownOpen);
-  };
 
   return (
     <nav 
@@ -73,27 +66,24 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <div key={link.name} className="relative group">
               {link.hasDropdown ? (
-                <div className="flex items-center cursor-pointer">
-                  <button 
-                    onClick={toggleGamesDropdown}
+                <div className="flex items-center cursor-pointer relative">
+                  <a 
+                    href={link.href}
                     className="animated-underline text-white/90 hover:text-fantasy-gold transition-colors duration-300 font-medium flex items-center gap-1"
                   >
                     {link.name}
-                    <ChevronDown size={16} className={`transition-transform duration-300 ${gamesDropdownOpen ? 'rotate-180' : ''}`} />
-                  </button>
+                    <ChevronDown size={16} className="transition-transform duration-300 group-hover:rotate-180" />
+                  </a>
                   
-                  {/* Games Dropdown */}
+                  {/* Games Dropdown - Now appears on hover */}
                   <div 
-                    className={`absolute top-full left-0 w-48 mt-2 p-2 bg-fantasy-navy bg-opacity-95 backdrop-blur-md border border-fantasy-purple/20 rounded-md shadow-fantasy z-50 transition-all duration-300 ${
-                      gamesDropdownOpen ? 'opacity-100 transform translate-y-0 visible' : 'opacity-0 transform -translate-y-2 invisible'
-                    }`}
+                    className="absolute top-full left-0 w-48 mt-2 p-2 bg-fantasy-navy bg-opacity-95 backdrop-blur-md border border-fantasy-purple/20 rounded-md shadow-fantasy z-50 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transform -translate-y-2"
                   >
                     {link.dropdownItems?.map((item) => (
                       <a 
                         key={item.name} 
                         href={item.href} 
                         className="block w-full text-left px-3 py-2 text-white/90 hover:text-fantasy-gold hover:bg-fantasy-dark/60 rounded transition-colors duration-200"
-                        onClick={() => setGamesDropdownOpen(false)}
                       >
                         {item.name}
                       </a>
