@@ -49,39 +49,47 @@ const Blog = () => {
     };
   }, []);
 
-  // Sample blog posts data - these are just for demonstration purposes
+  // Sample blog post that explains how to add new blog posts
   const blogPosts: BlogPost[] = [
     {
       id: 1,
-      title: "[DEMO] PixelJump Development Update: New Levels and Power-ups",
-      excerpt: "This is a demonstration post. In a real project, this would contain actual development updates for PixelJump.",
-      content: "This is a demonstration post. In a real project, this would contain actual development progress for PixelJump. We've been hard at work on PixelJump, our retro-inspired platformer. The jungle world is now complete with 5 challenging levels, each with unique mechanics and hidden secrets.",
-      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
-      date: "June 15, 2023",
+      title: "How to Add New Blog Posts to Your RemmoldGames Website",
+      excerpt: "A step-by-step guide on how to add, edit, and manage blog posts for the RemmoldGames website.",
+      content: `
+To add new blog posts to your RemmoldGames website, follow these steps:
+
+1. Open the src/pages/Blog.tsx file in your code editor.
+2. Locate the blogPosts array in the Blog component.
+3. Add a new blog post object with the following structure:
+
+\`\`\`javascript
+{
+  id: [unique number],
+  title: "Your Blog Post Title",
+  excerpt: "A brief summary of your post",
+  content: "The full content of your blog post...",
+  image: "URL to an image (use royalty-free images)",
+  date: "Month DD, YYYY",
+  author: "Your Name",
+  category: "Category",
+  readTime: "X min"
+}
+\`\`\`
+
+4. Make sure to assign a unique ID to each new blog post.
+5. For images, you can:
+   - Use locally stored images in your public folder
+   - Use placeholder.com for testing
+   - Use royalty-free images from sources like Unsplash (with attribution if required)
+   
+6. Save the file and rebuild your project.
+
+Remember to avoid using copyrighted material without proper licensing, and consider adding a date sorting mechanism as your blog grows.
+      `,
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      date: "Current Date",
       author: "RemmoldGames",
-      category: "Development",
-      readTime: "4 min"
-    },
-    {
-      id: 2,
-      title: "[DEMO] Art Direction in Fantasy Games: Finding Our Visual Style",
-      excerpt: "This is a demonstration post. In a real project, this would contain actual design insights.",
-      content: "This is a demonstration post. In a real project, this would contain actual design insights. The art direction for our fantasy titles has been one of our most challenging and rewarding endeavors.",
-      image: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1",
-      date: "May 22, 2023",
-      author: "RemmoldGames",
-      category: "Art & Design",
-      readTime: "6 min"
-    },
-    {
-      id: 3,
-      title: "[DEMO] Community Spotlight: Fan Art and Feedback",
-      excerpt: "This is a demonstration post. In a real project, this would contain actual community highlights.",
-      content: "This is a demonstration post. In a real project, this would contain actual community content. We've been blown away by the creativity of our community! Since releasing early concepts of our games, talented fans have created amazing artwork.",
-      image: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8",
-      date: "April 10, 2023",
-      author: "RemmoldGames",
-      category: "Community",
+      category: "Documentation",
       readTime: "5 min"
     }
   ];
@@ -106,22 +114,18 @@ const Blog = () => {
             <p className="text-white/70 max-w-2xl mx-auto">
               Follow our journey in game development, read about our progress, design insights, and community highlights.
             </p>
-            <div className="mt-4 inline-block px-3 py-1 rounded-full bg-fantasy-navy/60 text-xs text-fantasy-gold">
-              Demo Content
-            </div>
           </div>
           
           {/* Blog Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
             {blogPosts.map((post) => (
               <div 
                 key={post.id} 
                 className={`fantasy-card group hover:shadow-fantasy transition-all duration-500 overflow-hidden ${
                   isLoaded ? 'animate-fade-in' : 'opacity-0'
                 }`}
-                style={{ animationDelay: `${200 * blogPosts.indexOf(post)}ms` }}
               >
-                <div className="h-48 overflow-hidden relative">
+                <div className="h-56 overflow-hidden relative">
                   <img 
                     src={post.image} 
                     alt={post.title}
@@ -150,17 +154,21 @@ const Blog = () => {
                     </div>
                   </div>
                   
-                  <h2 className="text-xl font-marcellus text-fantasy-gold mb-3 line-clamp-2">
+                  <h2 className="text-xl font-marcellus text-fantasy-gold mb-3">
                     {post.title}
                   </h2>
                   
-                  <p className="text-white/70 mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  
-                  <button className="animated-underline text-fantasy-light-purple hover:text-fantasy-gold transition-colors duration-300">
-                    Read More
-                  </button>
+                  <div className="text-white/70 mb-4 whitespace-pre-line">
+                    <h3 className="text-fantasy-light-purple mb-2">Summary:</h3>
+                    <p className="mb-4">{post.excerpt}</p>
+                    
+                    <h3 className="text-fantasy-light-purple mb-2">Full Guide:</h3>
+                    <div className="prose prose-invert max-w-none">
+                      {post.content.split('\n\n').map((paragraph, idx) => (
+                        <p key={idx} className="mb-3">{paragraph}</p>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
