@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Download, Calendar, ExternalLink } from 'lucide-react';
@@ -29,7 +30,7 @@ interface Game {
   updates: GameUpdate[];
 }
 
-// Mock data - in a real app, this would come from an API or database
+// Mock data - this is just for demonstration purposes
 const gamesData: Game[] = [
   {
     id: 4,
@@ -43,21 +44,21 @@ const gamesData: Game[] = [
     updates: [
       {
         id: 1,
-        title: "PixelJump Development Update: New Levels and Power-ups",
-        content: "We've added 10 new levels in the Crystal Caves world, along with two new power-ups: the Gravity Flip and Time Slow abilities. These new mechanics open up exciting possibilities for both speedrunning and casual play.",
+        title: "[DEMO] PixelJump Development Update: New Levels and Power-ups",
+        content: "This is a demonstration update. In a real project, this would contain actual development progress. We've added 10 new levels in the Crystal Caves world, along with two new power-ups: the Gravity Flip and Time Slow abilities.",
         date: "June 15, 2023",
         links: [
-          { url: "#changelog", label: "Full Changelog" },
-          { url: "#speedrun", label: "Speedrun Challenge" }
+          { url: "#changelog", label: "Demo Changelog" },
+          { url: "#speedrun", label: "Demo Speedrun Challenge" }
         ]
       },
       {
         id: 2,
-        title: "Community Level Editor Beta",
-        content: "The much-requested level editor is now available in beta! Create your own PixelJump challenges, share them with the community, and play levels designed by other fans. The editor includes all tiles, enemies, and mechanics from the main game.",
+        title: "[DEMO] Community Level Editor Beta",
+        content: "This is a demonstration update. In a real project, this would contain actual feature announcements. The much-requested level editor is now available in beta! Create your own PixelJump challenges and share them with the community.",
         date: "May 10, 2023",
         links: [
-          { url: "#editor-guide", label: "Editor Tutorial" }
+          { url: "#editor-guide", label: "Demo Editor Tutorial" }
         ]
       }
     ]

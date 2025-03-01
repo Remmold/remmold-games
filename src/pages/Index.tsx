@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -42,14 +43,14 @@ const Index = () => {
   const recentPosts = [
     {
       id: 1,
-      title: "PixelJump Development Update: New Levels and Power-ups",
+      title: "[DEMO] PixelJump Development Update: New Levels and Power-ups",
       date: "June 15, 2023",
       image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
       gameId: 4
     },
     {
       id: 2,
-      title: "Art Direction in Fantasy Games: Finding Our Visual Style",
+      title: "[DEMO] Art Direction in Fantasy Games: Finding Our Visual Style",
       date: "May 22, 2023",
       image: "https://images.unsplash.com/photo-1551103782-8ab07afd45c1"
     }
