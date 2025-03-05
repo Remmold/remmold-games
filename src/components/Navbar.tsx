@@ -1,13 +1,15 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [gamesDropdownOpen, setGamesDropdownOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const isOnBlogPage = location.pathname === '/blog';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,25 +24,52 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavigate = (href: string) => {
+    if (href.startsWith('#')) {
+      if (isOnBlogPage) {
+        // If on blog page and trying to navigate to a section on home page
+        navigate('/' + href);
+      } else {
+        // Already on home page, just scroll to section
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    if (mobileMenuOpen) setMobileMenuOpen(false);
+  };
+
   const handleBlogClick = () => {
     navigate('/blog');
     if (mobileMenuOpen) setMobileMenuOpen(false);
   };
 
+  const handleHomeClick = () => {
+    if (isOnBlogPage) {
+      navigate('/');
+    } else {
+      // If already on home page, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    if (mobileMenuOpen) setMobileMenuOpen(false);
+  };
+
   const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
+    { name: 'Home', onClick: handleHomeClick },
+    { name: 'About', href: '#about', onClick: () => handleNavigate('#about') },
     { 
       name: 'Games', 
       href: '#games',
+      onClick: () => handleNavigate('#games'),
       hasDropdown: true,
       dropdownItems: [
-        { name: 'PixelJump', href: '#games' }
+        { name: 'PixelJump', href: '#games', onClick: () => handleNavigate('#games') }
       ]
     },
-    { name: 'Collaborators', href: '#collaborators' },
+    { name: 'Collaborators', href: '#collaborators', onClick: () => handleNavigate('#collaborators') },
     { name: 'Blog', onClick: handleBlogClick },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: '#contact', onClick: () => handleNavigate('#contact') }
   ];
 
   return (
@@ -52,7 +81,14 @@ const Navbar = () => {
       }`}
     >
       <div className="fantasy-container flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2">
+        <a 
+          href="#" 
+          onClick={(e) => {
+            e.preventDefault();
+            handleHomeClick();
+          }}
+          className="flex items-center gap-2"
+        >
           <div className="relative">
             <span className="text-fantasy-gold font-cinzel text-xl md:text-2xl tracking-wider font-bold relative z-10">
               RemmoldGames
@@ -67,26 +103,26 @@ const Navbar = () => {
             <div key={link.name} className="relative group">
               {link.hasDropdown ? (
                 <div className="flex items-center cursor-pointer relative">
-                  <a 
-                    href={link.href}
+                  <button 
+                    onClick={link.onClick}
                     className="animated-underline text-white/90 hover:text-fantasy-gold transition-colors duration-300 font-medium flex items-center gap-1"
                   >
                     {link.name}
                     <ChevronDown size={16} className="transition-transform duration-300 group-hover:rotate-180" />
-                  </a>
+                  </button>
                   
                   {/* Games Dropdown - Now appears on hover */}
                   <div 
                     className="absolute top-full left-0 w-48 mt-2 p-2 bg-fantasy-navy bg-opacity-95 backdrop-blur-md border border-fantasy-purple/20 rounded-md shadow-fantasy z-50 transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transform -translate-y-2"
                   >
                     {link.dropdownItems?.map((item) => (
-                      <a 
+                      <button 
                         key={item.name} 
-                        href={item.href} 
+                        onClick={item.onClick}
                         className="block w-full text-left px-3 py-2 text-white/90 hover:text-fantasy-gold hover:bg-fantasy-dark/60 rounded transition-colors duration-200"
                       >
                         {item.name}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -101,6 +137,10 @@ const Navbar = () => {
                 ) : (
                   <a
                     href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (link.onClick) link.onClick();
+                    }}
                     className="animated-underline text-white/90 hover:text-fantasy-gold transition-colors duration-300 font-medium"
                   >
                     {link.name}
@@ -143,14 +183,13 @@ const Navbar = () => {
                   {gamesDropdownOpen && (
                     <div className="mt-2 mb-4 py-2 px-4 w-full bg-fantasy-navy/50 rounded-md">
                       {link.dropdownItems?.map((item) => (
-                        <a 
+                        <button 
                           key={item.name} 
-                          href={item.href} 
+                          onClick={item.onClick}
                           className="block w-full text-center py-2 text-white/80 hover:text-fantasy-gold transition-colors duration-200"
-                          onClick={() => setMobileMenuOpen(false)}
                         >
                           {item.name}
-                        </a>
+                        </button>
                       ))}
                     </div>
                   )}
@@ -166,7 +205,10 @@ const Navbar = () => {
                 ) : (
                   <a
                     href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (link.onClick) link.onClick();
+                    }}
                     className="w-full text-center block text-white/90 hover:text-fantasy-gold transition-colors duration-300 text-lg font-medium"
                   >
                     {link.name}
