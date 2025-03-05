@@ -89,6 +89,7 @@
     box-shadow: 0 8px 20px -15px rgba(126, 87, 194, 0.5);
   }
   
+  /* Original buttons with shimmer effect (can cause flickering) */
   .fantasy-button {
     @apply px-6 py-2.5 rounded-md bg-gradient-to-br from-fantasy-purple to-fantasy-light-purple text-white font-medium transition-all duration-300 shadow-md hover:shadow-lg relative overflow-hidden;
   }
@@ -111,6 +112,15 @@
   
   .gold-button:hover::before {
     @apply opacity-100;
+  }
+  
+  /* Fixed buttons without flickering shimmer effect */
+  .fantasy-button-fixed {
+    @apply px-6 py-2.5 rounded-md bg-gradient-to-br from-fantasy-purple to-fantasy-light-purple text-white font-medium transition-all duration-300 shadow-md hover:shadow-lg relative overflow-hidden hover:brightness-110;
+  }
+  
+  .gold-button-fixed {
+    @apply px-6 py-2.5 rounded-md bg-gradient-to-br from-fantasy-gold to-fantasy-amber text-fantasy-dark font-medium transition-all duration-300 shadow-md hover:shadow-lg relative overflow-hidden border border-fantasy-amber/40 hover:brightness-110;
   }
   
   .ornate-border {

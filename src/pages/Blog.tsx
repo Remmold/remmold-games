@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import { ArrowLeft, Calendar, User, Tag, Clock } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface BlogPost {
   id: number;
@@ -120,13 +120,13 @@ Example:
         <div className="fantasy-container">
           {/* Blog Header */}
           <div className="mb-12 text-center">
-            <button 
-              onClick={() => navigate('/')} 
+            <Link 
+              to="/" 
               className="inline-flex items-center gap-2 text-fantasy-gold/80 hover:text-fantasy-gold transition-colors duration-300 mb-6"
             >
               <ArrowLeft size={16} />
               <span>Back to Home</span>
-            </button>
+            </Link>
             
             <h1 className="fantasy-title text-center mb-6">Dev Updates & Blog</h1>
             <p className="text-white/70 max-w-2xl mx-auto">
@@ -217,7 +217,7 @@ Example:
                   />
                   <button 
                     type="submit" 
-                    className="fantasy-button whitespace-nowrap"
+                    className="fantasy-button-fixed whitespace-nowrap"
                   >
                     Subscribe
                   </button>

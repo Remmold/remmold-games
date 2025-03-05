@@ -45,15 +45,15 @@ const Hero = () => {
           >
             <a 
               href="#games" 
-              className="fantasy-button group"
+              className="fantasy-button-fixed"
             >
-              <span className="relative z-10">Explore Our Games</span>
+              <span>Explore Our Games</span>
             </a>
             <a 
               href="#about" 
-              className="gold-button group"
+              className="gold-button-fixed"
             >
-              <span className="relative z-10">About The Studio</span>
+              <span>About The Studio</span>
             </a>
           </div>
         </div>

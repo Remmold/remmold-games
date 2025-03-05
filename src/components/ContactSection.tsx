@@ -129,10 +129,10 @@ const ContactSection = () => {
                 
                 <button 
                   type="submit" 
-                  className="fantasy-button w-full group flex items-center justify-center gap-2"
+                  className="fantasy-button-fixed w-full flex items-center justify-center gap-2"
                 >
-                  <span className="relative z-10">Send Message</span>
-                  <Send size={16} className="relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+                  <span>Send Message</span>
+                  <Send size={16} className="hover:translate-x-1 transition-transform duration-300" />
                 </button>
               </form>
             )}

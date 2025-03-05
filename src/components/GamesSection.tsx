@@ -94,14 +94,14 @@ const GamesSection = () => {
                 
                 <div className="flex flex-wrap gap-4">
                   {activeGame.playLink && (
-                    <a href={activeGame.playLink} className="fantasy-button group">
-                      <span className="relative z-10">Play Now</span>
+                    <a href={activeGame.playLink} className="fantasy-button-fixed">
+                      <span>Play Now</span>
                     </a>
                   )}
                   
                   {activeGame.downloadLink && (
-                    <a href={activeGame.downloadLink} className="gold-button group">
-                      <span className="relative z-10">Download</span>
+                    <a href={activeGame.downloadLink} className="gold-button-fixed">
+                      <span>Download</span>
                     </a>
                   )}
                   
