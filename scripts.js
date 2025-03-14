@@ -119,10 +119,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const gameData = {
         id: 1,
         title: "PixelJump",
-        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+        image: "assets/images/TitleScreen.png",
         description: "PixelJump is a challenging platformer game with retro pixel art and modern gameplay mechanics. Navigate through increasingly difficult levels, avoid obstacles, and collect power-ups to reach the end goal. The game features procedurally generated levels, ensuring a unique experience every time you play.",
         longDescription: "PixelJump combines the nostalgic charm of classic platformer games with modern gameplay innovations. Each level presents new challenges and obstacles that will test your reflexes and problem-solving skills. The procedural generation system ensures that no two playthroughs are ever the same, providing endless entertainment and replayability.\n\nWith a unique art style that blends pixel art with modern lighting and effects, PixelJump creates a visually stunning world that pays homage to gaming's past while embracing the technological capabilities of the present.",
-        platforms: ["PC", "Mac", "Mobile"],
+        platforms: ["PC"],
         status: "In Development",
         releaseDate: "TBD",
         tags: ["Platformer", "Pixel Art", "Indie", "Action", "Single Player"],
@@ -177,7 +177,8 @@ document.addEventListener('DOMContentLoaded', function() {
           },    */
 
         ],
-        downloadLink: "#" // Placeholder for Windows download link
+        downloadLink: "#" ,// Placeholder for Windows download link
+        assetLink: "https://assetstore.unity.com/packages/2d/environments/2d-platformer-tileset-173155"
       };
       
       renderGameDetail(gameData);
@@ -204,7 +205,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 ${game.tags.map(tag => `<span class="game-tag">${tag}</span>`).join('')}
               </div>
               
-              ${game.downloadLink ? `<a href="${game.downloadLink}" class="fantasy-button-fixed">Download for Windows</a>` : ''}
+              ${game.downloadLink ? `<a href="${game.downloadLink}" class="fantasy-button-fixed">Download for Windows</a>` : ''} 
+              ${game.assetLink ? `<a href="${game.assetLink}" class="fantasy-button-fixed">Assets</a>` : ''}
             </div>
           </div>
           
