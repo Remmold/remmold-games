@@ -1,315 +1,308 @@
-// DOM Elements
-const navbar = document.getElementById('navbar');
-const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mobileNav = document.querySelector('.mobile-nav');
-const mobileDropdownBtn = document.querySelector('.mobile-dropdown-btn');
-const mobileDropdownContent = document.querySelector('.mobile-dropdown-content');
-const contactForm = document.getElementById('contactForm');
-const gameDetailContainer = document.getElementById('gameDetailContainer');
 
-// Helper Functions
-function debounce(func, wait = 20, immediate = true) {
-  let timeout;
-  return function() {
-    const context = this, args = arguments;
-    const later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    const callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-}
-
-// Handle Navbar scroll effect
-function handleScroll() {
-  if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
-    scrollToTopBtn.classList.add('visible');
-  } else {
-    navbar.classList.remove('scrolled');
-    scrollToTopBtn.classList.remove('visible');
+document.addEventListener('DOMContentLoaded', function() {
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+      scrollToTopBtn.classList.add('visible');
+    } else {
+      navbar.classList.remove('scrolled');
+      scrollToTopBtn.classList.remove('visible');
+    }
+  });
+  
+  // Scroll to top button
+  if (scrollToTopBtn) {
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   }
-}
-
-// Initialize the page
-function init() {
-  // Add scroll event listener
-  window.addEventListener('scroll', debounce(handleScroll));
   
   // Mobile menu toggle
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileNav = document.querySelector('.mobile-nav');
+  
+  if (mobileMenuBtn && mobileNav) {
+    mobileMenuBtn.addEventListener('click', function() {
       mobileNav.classList.toggle('active');
-      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-      
-      // Update menu icon
-      const menuIcon = mobileMenuBtn.querySelector('.menu-icon');
-      menuIcon.textContent = mobileNav.classList.contains('active') ? '✕' : '☰';
+      document.body.classList.toggle('menu-open');
     });
   }
   
   // Mobile dropdown toggle
-  if (mobileDropdownBtn) {
-    mobileDropdownBtn.addEventListener('click', () => {
+  const mobileDropdownBtn = document.querySelector('.mobile-dropdown-btn');
+  const mobileDropdownContent = document.querySelector('.mobile-dropdown-content');
+  
+  if (mobileDropdownBtn && mobileDropdownContent) {
+    mobileDropdownBtn.addEventListener('click', function() {
       mobileDropdownContent.classList.toggle('hidden');
-      
-      // Update dropdown icon
-      const dropdownIcon = mobileDropdownBtn.querySelector('.dropdown-icon');
-      if (dropdownIcon) {
-        dropdownIcon.style.transform = mobileDropdownContent.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-      }
     });
   }
   
-  // Scroll to top button
-  if (scrollToTopBtn) {
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
-  
-  // Handle contact form submission
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Get form data
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      
-      // In a real app, you would send this data to a server
-      console.log('Form submitted:', { name, email, message });
-      
-      // Show success message
-      alert('Thank you for your message! We will get back to you soon.');
-      
-      // Reset form
-      contactForm.reset();
-    });
-  }
-  
-  // Load game details if on game detail page
-  if (gameDetailContainer && window.location.pathname.includes('game-detail.html')) {
-    loadGameDetails();
-  }
-}
-
-// Load game details based on URL parameter
-function loadGameDetails() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const gameId = urlParams.get('game');
-  
-  if (!gameId) {
-    showGameNotFound();
-    return;
-  }
-  
-  // In a real app, you would fetch game data from a server
-  // For this example, we'll use a mock game object
-  const game = getGameData(gameId);
-  
-  if (!game) {
-    showGameNotFound();
-    return;
-  }
-  
-  renderGameDetails(game);
-}
-
-// Mock function to get game data
-function getGameData(gameId) {
-  // Mock game data
-  const games = {
-    'pixeljump': {
-      id: 'pixeljump',
-      title: 'PixelJump',
-      description: 'A retro-styled platformer set in a world where pixels come to life. Navigate through challenging levels, collect magical artifacts, and defeat the glitch king.',
-      longDescription: 'PixelJump is a captivating retro platformer that combines classic gameplay with modern twists. As the heroic Bit, you must traverse through increasingly challenging pixel worlds, each with unique obstacles and enemies. The game features precision jumps, power-ups, and hidden secrets that will test your reflexes and problem-solving skills. With its charming pixel art style and chiptune soundtrack, PixelJump offers a nostalgic experience while introducing innovative gameplay mechanics that keep the adventure fresh and exciting.',
-      platforms: ['PC', 'Mac', 'Mobile'],
-      status: 'In Development',
-      releaseDate: 'Q4 2023',
-      tags: ['Platformer', 'Retro', 'Adventure', '2D'],
-      imageUrl: 'https://placehold.co/600x400?text=PixelJump',
-      features: [
-        {
-          title: 'Challenging Levels',
-          description: '30+ handcrafted levels of increasing difficulty',
-          icon: '🏆'
-        },
-        {
-          title: 'Power-ups',
-          description: 'Collect various power-ups to enhance your abilities',
-          icon: '⚡'
-        },
-        {
-          title: 'Boss Battles',
-          description: 'Epic boss fights at the end of each world',
-          icon: '👾'
-        }
-      ],
-      screenshots: [
-        'https://placehold.co/800x450?text=Screenshot+1',
-        'https://placehold.co/800x450?text=Screenshot+2',
-        'https://placehold.co/800x450?text=Screenshot+3'
-      ],
-      updates: [
-        {
-          date: 'September 15, 2023',
-          title: 'Alpha Testing Begins',
-          description: 'We\'ve started our closed alpha testing phase with a select group of players.'
-        },
-        {
-          date: 'August 1, 2023',
-          title: 'New World Announced',
-          description: 'We\'re excited to reveal the Crystal Caves world, coming to PixelJump!'
-        }
-      ]
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    if (mobileNav && mobileNav.classList.contains('active') && !event.target.closest('.mobile-nav') && !event.target.closest('.mobile-menu-btn')) {
+      mobileNav.classList.remove('active');
+      document.body.classList.remove('menu-open');
     }
-  };
+  });
   
-  return games[gameId];
-}
-
-// Render game details
-function renderGameDetails(game) {
-  document.title = `${game.title} - RemmoldGames`;
+  // Close mobile menu when clicking on a link
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-links .nav-link');
   
-  const gameDetailHTML = `
-    <div class="fantasy-container">
-      <div class="game-detail-header">
-        <div class="game-detail-image">
-          <img src="${game.imageUrl}" alt="${game.title}" loading="lazy">
-        </div>
-        <div class="game-detail-info">
-          <h1 class="game-detail-title">${game.title}</h1>
-          <div class="game-detail-meta">
-            ${game.platforms.map(platform => `<span class="game-detail-platform">${platform}</span>`).join('')}
-            <span class="game-detail-status">${game.status}</span>
-          </div>
-          <p class="game-detail-description">${game.longDescription}</p>
-          <div class="game-detail-tags">
-            ${game.tags.map(tag => `<span class="game-tag">${tag}</span>`).join('')}
-          </div>
-          <a href="#" class="fantasy-button-fixed">Wishlist Now</a>
-        </div>
-      </div>
-      
-      <div class="game-detail-features">
-        <h2 class="section-title">Key Features</h2>
-        <div class="features-grid">
-          ${game.features.map(feature => `
-            <div class="feature-card">
-              <div class="feature-title">
-                <div class="feature-icon">${feature.icon}</div>
-                <h3>${feature.title}</h3>
-              </div>
-              <p>${feature.description}</p>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-      
-      <div class="game-detail-screenshots">
-        <h2 class="section-title">Screenshots</h2>
-        <div class="screenshots-grid">
-          ${game.screenshots.map(screenshot => `
-            <div class="screenshot-item">
-              <img src="${screenshot}" alt="Game screenshot" loading="lazy">
-            </div>
-          `).join('')}
-        </div>
-      </div>
-      
-      <div class="game-detail-cta">
-        <h2 class="cta-title">Join the Adventure</h2>
-        <p class="cta-description">Follow our development journey and be the first to experience ${game.title} when it's released.</p>
-        <a href="#" class="gold-button-fixed">Subscribe for Updates</a>
-      </div>
-      
-      <div class="game-detail-updates">
-        <h2 class="section-title">Development Updates</h2>
-        <div class="updates-list">
-          ${game.updates.map(update => `
-            <div class="update-card">
-              <span class="update-date">${update.date}</span>
-              <h3 class="update-title">${update.title}</h3>
-              <p>${update.description}</p>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    </div>
-  `;
-  
-  gameDetailContainer.innerHTML = gameDetailHTML;
-}
-
-// Show game not found message
-function showGameNotFound() {
-  gameDetailContainer.innerHTML = `
-    <div class="fantasy-container">
-      <div class="fantasy-card" style="padding: 3rem; text-align: center;">
-        <h1 class="fantasy-title">Game Not Found</h1>
-        <p>Sorry, we couldn't find the game you're looking for.</p>
-        <a href="index.html#games" class="fantasy-button-fixed" style="margin-top: 2rem;">Back to Games</a>
-      </div>
-    </div>
-  `;
-}
-
-// Add smooth scrolling for anchor links
-document.addEventListener('click', function(e) {
-  const target = e.target;
-  
-  // Check if the clicked element is an anchor tag with a hash
-  if (target.tagName === 'A' && target.getAttribute('href') && target.getAttribute('href').startsWith('#')) {
-    const href = target.getAttribute('href');
-    
-    // If it's just a "#" (link to top), scroll to top
-    if (href === '#') {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      return;
-    }
-    
-    // Otherwise, find the element and scroll to it
-    const element = document.querySelector(href);
-    if (element) {
-      e.preventDefault();
-      const headerOffset = 100; // Adjust based on navbar height
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      
-      // If mobile menu is open, close it
-      if (mobileNav && mobileNav.classList.contains('active')) {
+  mobileNavLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (mobileNav) {
         mobileNav.classList.remove('active');
-        document.body.style.overflow = '';
+        document.body.classList.remove('menu-open');
+      }
+    });
+  });
+  
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      if (href === '#') return;
+      
+      if (href.startsWith('#')) {
+        e.preventDefault();
         
-        // Update menu icon
-        const menuIcon = mobileMenuBtn.querySelector('.menu-icon');
-        if (menuIcon) {
-          menuIcon.textContent = '☰';
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          const navbarHeight = navbar.offsetHeight;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
         }
       }
+    });
+  });
+  
+  // Add animation to elements on scroll
+  const animateElements = document.querySelectorAll('.fade-in-element');
+  
+  function checkScroll() {
+    animateElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (elementTop < windowHeight * 0.9) {
+        element.classList.add('visible');
+      }
+    });
+  }
+  
+  if (animateElements.length > 0) {
+    window.addEventListener('scroll', checkScroll);
+    checkScroll();
+  }
+  
+  // Game detail page functionality
+  const gameDetailContainer = document.getElementById('gameDetailContainer');
+  
+  if (gameDetailContainer) {
+    // Simulate loading game data
+    setTimeout(() => {
+      const gameData = {
+        id: 1,
+        title: "PixelJump",
+        image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+        description: "PixelJump is a challenging platformer game with retro pixel art and modern gameplay mechanics. Navigate through increasingly difficult levels, avoid obstacles, and collect power-ups to reach the end goal. The game features procedurally generated levels, ensuring a unique experience every time you play.",
+        longDescription: "PixelJump combines the nostalgic charm of classic platformer games with modern gameplay innovations. Each level presents new challenges and obstacles that will test your reflexes and problem-solving skills. The procedural generation system ensures that no two playthroughs are ever the same, providing endless entertainment and replayability.\n\nWith a unique art style that blends pixel art with modern lighting and effects, PixelJump creates a visually stunning world that pays homage to gaming's past while embracing the technological capabilities of the present.",
+        platforms: ["PC", "Mac", "Mobile"],
+        status: "In Development",
+        releaseDate: "Q3 2023",
+        tags: ["Platformer", "Pixel Art", "Indie", "Action", "Single Player"],
+        features: [
+          {
+            icon: "⚡",
+            title: "Dynamic Gameplay",
+            description: "Experience fluid controls and responsive mechanics that make each jump and movement satisfying."
+          },
+          {
+            icon: "🎮",
+            title: "Retro-Modern Fusion",
+            description: "Enjoy the nostalgic feel of pixel art combined with modern game design principles and effects."
+          },
+          {
+            icon: "🔄",
+            title: "Procedural Generation",
+            description: "Encounter new challenges with every playthrough thanks to our advanced level generation system."
+          },
+          {
+            icon: "🏆",
+            title: "Achievement System",
+            description: "Unlock achievements and compete with friends on the global leaderboard."
+          },
+          {
+            icon: "🎵",
+            title: "Original Soundtrack",
+            description: "Immerse yourself in the game with our original chiptune-inspired soundtrack that evolves as you progress."
+          },
+          {
+            icon: "💾",
+            title: "Cross-Platform Save",
+            description: "Continue your progress across different devices with our cloud save feature."
+          }
+        ],
+        screenshots: [
+          "https://images.unsplash.com/photo-1586336900273-53d3668f9251?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+          "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+          "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+          "https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+        ],
+        updates: [
+          {
+            date: "June 15, 2023",
+            title: "Alpha Testing Begins",
+            content: "We're excited to announce that PixelJump has entered alpha testing! A select group of testers will be playing through the first 10 levels and providing feedback on gameplay mechanics and overall feel."
+          },
+          {
+            date: "May 3, 2023",
+            title: "New Enemy Types Revealed",
+            content: "Today we're unveiling three new enemy types that will challenge players in different ways. Each has unique movement patterns and abilities that will require different strategies to overcome."
+          },
+          {
+            date: "April 12, 2023",
+            title: "Development Update",
+            content: "We've made significant progress on the level generation algorithm, improving variety and ensuring a balanced difficulty curve throughout the game."
+          }
+        ]
+      };
+      
+      renderGameDetail(gameData);
+    }, 1000);
+    
+    function renderGameDetail(game) {
+      const content = `
+        <div class="fantasy-container">
+          <div class="game-detail-header">
+            <div class="game-detail-image">
+              <img src="${game.image}" alt="${game.title}" />
+            </div>
+            <div class="game-detail-info">
+              <h1 class="game-detail-title">${game.title}</h1>
+              
+              <div class="game-detail-meta">
+                ${game.platforms.map(platform => `<span class="game-detail-platform">${platform}</span>`).join('')}
+                <span class="game-detail-status">${game.status}</span>
+              </div>
+              
+              <div class="game-detail-description">${game.longDescription.replace(/\n/g, '<br>')}</div>
+              
+              <div class="game-detail-tags">
+                ${game.tags.map(tag => `<span class="game-tag">${tag}</span>`).join('')}
+              </div>
+              
+              <a href="#" class="fantasy-button-fixed">Wishlist Now</a>
+            </div>
+          </div>
+          
+          <div class="game-detail-features">
+            <h2 class="section-title">Key Features</h2>
+            
+            <div class="features-grid">
+              ${game.features.map(feature => `
+                <div class="feature-card">
+                  <div class="feature-title">
+                    <div class="feature-icon">${feature.icon}</div>
+                    <h3>${feature.title}</h3>
+                  </div>
+                  <p>${feature.description}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          
+          <div class="game-detail-screenshots">
+            <h2 class="section-title">Screenshots</h2>
+            
+            <div class="screenshots-grid">
+              ${game.screenshots.map(screenshot => `
+                <div class="screenshot-item">
+                  <img src="${screenshot}" alt="Game Screenshot" />
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          
+          <div class="game-detail-cta">
+            <h2 class="cta-title">Join Our Community</h2>
+            <p class="cta-description">Be part of the PixelJump journey! Join our Discord server to connect with other players, share feedback, and get exclusive updates on development progress.</p>
+            <a href="#" class="gold-button-fixed">Join Discord</a>
+          </div>
+          
+          <div class="game-detail-updates">
+            <h2 class="section-title">Development Updates</h2>
+            
+            <div class="updates-list">
+              ${game.updates.map(update => `
+                <div class="update-card">
+                  <span class="update-date">${update.date}</span>
+                  <h3 class="update-title">${update.title}</h3>
+                  <p>${update.content}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+      
+      gameDetailContainer.innerHTML = content;
+      
+      // Add animation classes to elements
+      const elements = gameDetailContainer.querySelectorAll('.game-detail-header, .game-detail-features, .game-detail-screenshots, .game-detail-cta, .game-detail-updates');
+      elements.forEach((element, index) => {
+        element.classList.add('fade-in-element');
+        setTimeout(() => {
+          element.classList.add('visible');
+        }, 200 * index);
+      });
     }
   }
+  
+  // Add fade-in animations to elements
+  document.body.classList.add('fade-in');
 });
 
-// Initialize when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', init);
+// Add CSS styles for animations
+const styleSheet = document.createElement("style");
+styleSheet.textContent = `
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  body.menu-open {
+    overflow: hidden;
+  }
+`;
+document.head.appendChild(styleSheet);
