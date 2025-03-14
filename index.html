@@ -1,115 +1,216 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remmold Games - Fantasy Game Development Studio</title>
-  <meta name="description" content="Remmold Games creates enchanting fantasy games with immersive worlds and engaging gameplay.">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="public/favicon.ico">
-</head>
-<body>
-  <div id="particle-container"></div>
-  
-  <!-- Navigation -->
-  <nav id="main-nav">
-    <div class="nav-container">
-      <div class="logo">
-        <a href="index.html">Remmold Games</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RemmoldGames</title>
+    <meta name="description" content="Fantasy game development portfolio" />
+    <meta name="author" content="RemmoldGames" />
+    <meta property="og:image" content="/og-image.png" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar">
+      <div class="fantasy-container nav-container">
+        <a href="#" class="nav-logo">
+          <div class="logo-text">
+            <span class="text-fantasy-gold">RemmoldGames</span>
+          </div>
+        </a>
+
+        <div class="nav-links desktop-nav">
+          <a href="#" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <div class="dropdown">
+            <button class="nav-link dropdown-btn">Games <i class="dropdown-icon">▼</i></button>
+            <div class="dropdown-content">
+              <a href="#games">PixelJump</a>
+            </div>
+          </div>
+          <a href="#collaborators" class="nav-link">Collaborators</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span class="menu-icon">☰</span>
+        </button>
       </div>
-      <div class="nav-toggle" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav">
+        <div class="mobile-nav-links">
+          <a href="#" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <button class="mobile-dropdown-btn">
+            Games <i class="dropdown-icon">▼</i>
+          </button>
+          <div class="mobile-dropdown-content hidden">
+            <a href="#games">PixelJump</a>
+          </div>
+          <a href="#collaborators" class="nav-link">Collaborators</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
       </div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#games">Games</a></li>
-        <li><a href="#developer">Developer</a></li>
-        <li><a href="#blog-preview">Updates</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="hero-container">
-      <h1>Welcome to Remmold Games</h1>
-      <p>Creating immersive fantasy worlds for you to explore.</p>
-      <a href="#games" class="cta-button">Explore Our Games</a>
-    </div>
-  </section>
-  
-  <!-- About Section -->
-  <section id="about">
-    <div class="about-container">
-      <h2>About Us</h2>
-      <p>We are a passionate team of game developers dedicated to crafting unforgettable fantasy experiences. Our games feature rich lore, stunning visuals, and engaging gameplay.</p>
-    </div>
-  </section>
-  
-  <!-- Games Section -->
-  <section id="games">
-    <div class="games-container">
-      <h2>Our Games</h2>
-      <div class="game">
-        <h3>Game Title 1</h3>
-        <p>Description of Game 1.</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content fantasy-container">
+        <h1 class="hero-title">Welcome to the Realm of <span class="text-fantasy-gold">Fantasy Gaming</span></h1>
+        <p class="hero-subtitle">Embark on an epic journey through our handcrafted digital adventures</p>
+        <div class="hero-buttons">
+          <a href="#games" class="fantasy-button-fixed">Discover Our Games</a>
+          <a href="#contact" class="gold-button-fixed">Contact Me</a>
+        </div>
       </div>
-      <div class="game">
-        <h3>Game Title 2</h3>
-        <p>Description of Game 2.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="fantasy-container">
+        <h2 class="section-title">Our Epic Tale</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Founded in the mystical year of 2023, RemmoldGames is a passionate indie game development studio dedicated to crafting immersive fantasy gaming experiences.</p>
+            <p>As a solo developer, I work to bring magical worlds to life, where every player can become the hero of their own legend.</p>
+            <p>With a focus on rich narratives and captivating gameplay, I strive to create games that transport players to realms where imagination knows no bounds.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <h3 class="stat-value">2023</h3>
+              <p class="stat-label">Year Founded</p>
+            </div>
+            <div class="stat-card">
+              <h3 class="stat-value">1</h3>
+              <p class="stat-label">Team Member</p>
+            </div>
+            <div class="stat-card">
+              <h3 class="stat-value">1</h3>
+              <p class="stat-label">Game in Development</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Developer Section (formerly Collaborators) -->
-  <section id="developer">
-    <div class="developer-container">
-      <h2>Developer</h2>
-      <p>Meet the team behind the magic.</p>
-    </div>
-  </section>
-  
-  <!-- Blog Preview Section -->
-  <section id="blog-preview">
-    <div class="blog-preview-container">
-      <h2>Latest Updates</h2>
-      <div class="blog-post">
-        <h3>Blog Post Title 1</h3>
-        <p>Brief summary of blog post 1.</p>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="section games-section">
+      <div class="fantasy-container">
+        <h2 class="section-title">Our Legendary Quests</h2>
+        <div class="games-grid">
+          <div class="game-card">
+            <div class="game-image">
+              <img src="https://placehold.co/600x400?text=PixelJump" alt="PixelJump Game" loading="lazy" />
+            </div>
+            <div class="game-content">
+              <h3 class="game-title">PixelJump</h3>
+              <p class="game-description">A retro-styled platformer set in a world where pixels come to life. Navigate through challenging levels, collect magical artifacts, and defeat the glitch king.</p>
+              <div class="game-tags">
+                <span class="game-tag">Platformer</span>
+                <span class="game-tag">Retro</span>
+                <span class="game-tag">Adventure</span>
+              </div>
+              <a href="game-detail.html?game=pixeljump" class="fantasy-button-fixed">Learn More</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="blog-post">
-        <h3>Blog Post Title 2</h3>
-        <p>Brief summary of blog post 2.</p>
+    </section>
+
+    <!-- Collaborators Section -->
+    <section id="collaborators" class="section collaborators-section">
+      <div class="fantasy-container">
+        <h2 class="section-title">About the Developer</h2>
+        <div class="collaborators-grid">
+          <div class="collaborator-card">
+            <div class="collaborator-avatar">
+              <img src="https://placehold.co/150x150?text=AJ" alt="Andreas Johansson" loading="lazy" />
+            </div>
+            <h3 class="collaborator-name">Andreas Johansson</h3>
+            <p class="collaborator-role">Game Developer</p>
+            <p class="collaborator-description">Solo developer passionate about creating immersive gaming experiences through code, art and storytelling.</p>
+            <div class="collaborator-links">
+              <a href="https://github.com/remmold" target="_blank" rel="noopener noreferrer" class="collaborator-link">GitHub</a>
+              <a href="https://www.linkedin.com/in/andreas-johansson-24b081320/" target="_blank" rel="noopener noreferrer" class="collaborator-link">LinkedIn</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="contact-container">
-      <h2>Contact Us</h2>
-      <p>Get in touch with us for inquiries and collaborations.</p>
-    </div>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <p>&copy; 2024 Remmold Games. All rights reserved.</p>
-    </div>
-  </footer>
-  
-  <!-- Scroll To Top -->
-  <button id="scrollToTopBtn">^</button>
-  
-  <!-- Lovable script tag -->
-  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-  
-  <!-- Main application scripts -->
-  <script src="scripts.js"></script>
-</body>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="fantasy-container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <p>Have questions about my games or wish to collaborate? Send a message my way!</p>
+            <div class="contact-method">
+              <span class="contact-icon">✉️</span>
+              <span>contact@remmoldgames.com</span>
+            </div>
+          </div>
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="gold-button-fixed">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="fantasy-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="text-fantasy-gold">RemmoldGames</span>
+            <p class="footer-tagline">Crafting Digital Fantasy Since 2023</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-links-column">
+              <h4 class="footer-links-title">Navigation</h4>
+              <a href="#">Home</a>
+              <a href="#about">About</a>
+              <a href="#games">Games</a>
+              <a href="#collaborators">About Dev</a>
+              <a href="blog.html">Blog</a>
+              <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-links-column">
+              <h4 class="footer-links-title">Connect</h4>
+              <a href="https://github.com/remmold" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/andreas-johansson-24b081320/" target="_blank">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 RemmoldGames. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+
+    <script src="scripts.js"></script>
+  </body>
 </html>
