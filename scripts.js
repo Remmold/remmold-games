@@ -231,14 +231,13 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="game-detail-screenshots">
             <h2 class="section-title">Screenshots</h2>
             
-            <div class="screenshots-grid">
-              ${game.screenshots.map(screenshot => `
-                <div class="screenshot-item">
-                  <img src="${screenshot}" alt="Game Screenshot" />
-                </div>
-              `).join('')}
-            </div>
-          </div>
+          <div class="screenshots-grid">
+            ${game.screenshots.map(screenshot => `
+              <div class="screenshot-item">
+                <img src="${screenshot}" alt="Game Screenshot" class="clickable-screenshot" />
+              </div>
+            `).join('')}
+          </div>  
           
           <div class="game-detail-updates">
             <h2 class="section-title">Development Updates</h2>
@@ -257,6 +256,14 @@ document.addEventListener('DOMContentLoaded', function() {
       `;
       
       gameDetailContainer.innerHTML = content;
+      // Make screenshots clickable to open in a new tab
+      document.querySelectorAll(".clickable-screenshot").forEach(img => {
+        img.addEventListener("click", function () {
+          window.open(this.src, "_blank");
+        });
+      });
+          
+
       
       // Add animation classes to elements
       const elements = gameDetailContainer.querySelectorAll('.game-detail-header, .game-detail-features, .game-detail-screenshots, .game-detail-updates');
