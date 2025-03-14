@@ -206,7 +206,8 @@ document.addEventListener('DOMContentLoaded', function() {
               </div>
               
               ${game.downloadLink ? `<a href="${game.downloadLink}" class="fantasy-button-fixed">Download for Windows</a>` : ''} 
-              ${game.assetLink ? `<a href="${game.assetLink}" class="fantasy-button-fixed">Assets</a>` : ''}
+              ${game.assetLink ? `<a href="${game.assetLink}" class="fantasy-button-fixed" target="_blank" rel="noopener noreferrer">Assets</a>` : ''}
+              
             </div>
           </div>
           
