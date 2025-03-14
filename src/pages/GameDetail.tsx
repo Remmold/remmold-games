@@ -39,8 +39,7 @@ const gamesData: Game[] = [
     longDescription: "PixelJump combines the charm of classic platformers with modern game design. Navigate through diverse worlds filled with unique obstacles, collect power-ups that transform gameplay, and discover hidden secrets in meticulously crafted pixel art environments. With responsive controls and a gradual difficulty curve, the game welcomes casual players while offering challenges for platformer veterans.",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     status: "Released",
-    playLink: "#",
-    downloadLink: "#",
+    downloadLink: "#", // Placeholder for Windows download
     updates: [
       {
         id: 1,
@@ -146,18 +145,12 @@ const GameDetail = () => {
                   <a href={game.downloadLink} className="fantasy-button group">
                     <span className="relative z-10 flex items-center gap-2">
                       <Download size={16} />
-                      Download Game
+                      Download for Windows
                     </span>
                   </a>
                 )}
                 
-                {game?.playLink && (
-                  <a href={game.playLink} className="gold-button group">
-                    <span className="relative z-10">Play Online</span>
-                  </a>
-                )}
-                
-                {!game?.playLink && !game?.downloadLink && (
+                {!game?.downloadLink && (
                   <span className="px-4 py-2 bg-fantasy-navy/50 backdrop-blur-sm rounded border border-fantasy-purple/20 text-white/70">
                     {game?.status}
                   </span>

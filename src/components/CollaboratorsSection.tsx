@@ -18,30 +18,12 @@ const CollaboratorsSection = () => {
   const collaborators: Collaborator[] = [
     {
       id: 1,
-      name: "Elena Winters",
-      role: "Character Artist",
-      description: "Specializes in creating memorable characters with distinct personalities that bring the game world to life.",
+      name: "Andreas Johansson",
+      role: "Game Developer",
+      description: "Solo developer passionate about creating immersive gaming experiences through code, art and storytelling.",
       image: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
-      githubUrl: "#",
-      websiteUrl: "#"
-    },
-    {
-      id: 2,
-      name: "Marcus Chen",
-      role: "Composer",
-      description: "Creates atmospheric fantasy soundtracks that enhance the immersion and emotional impact of our games.",
-      image: "https://images.unsplash.com/photo-1501286353178-1ec881214838",
-      githubUrl: "#",
-      websiteUrl: "#"
-    },
-    {
-      id: 3,
-      name: "Sophia Martinez",
-      role: "Story Writer",
-      description: "Weaves intricate narratives and builds complex fantasy worlds with rich lore and compelling characters.",
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05",
-      githubUrl: "#",
-      websiteUrl: "#"
+      githubUrl: "https://github.com/remmold",
+      websiteUrl: "https://www.linkedin.com/in/andreas-johansson-24b081320/"
     }
   ];
   
@@ -73,15 +55,15 @@ const CollaboratorsSection = () => {
     <section id="collaborators" className="py-20 relative">
       <div className="fantasy-container relative z-10">
         <div className="text-center mb-12">
-          <h2 className="section-title">Friends & Collaborators</h2>
+          <h2 className="section-title">About the Developer</h2>
           <p className="text-white/70 max-w-2xl mx-auto">
-            Meet the talented individuals who help bring our magical worlds to life through their creativity and expertise.
+            Meet the person behind RemmoldGames.
           </p>
         </div>
         
         <div 
           ref={sectionRef}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 opacity-0"
+          className="grid grid-cols-1 gap-8 opacity-0 max-w-xl mx-auto"
         >
           {collaborators.map((collaborator) => (
             <div key={collaborator.id} className="fantasy-card overflow-hidden group">
@@ -120,7 +102,7 @@ const CollaboratorsSection = () => {
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="p-1.5 bg-fantasy-navy rounded-full text-white/70 hover:text-white hover:bg-fantasy-purple/30 transition-colors duration-300"
-                        aria-label={`${collaborator.name}'s Website`}
+                        aria-label={`${collaborator.name}'s LinkedIn`}
                       >
                         <ExternalLink size={16} />
                       </a>
@@ -132,12 +114,6 @@ const CollaboratorsSection = () => {
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <a href="#contact" className="inline-block gold-button">
-            <span className="relative z-10">Join Our Team</span>
-          </a>
         </div>
       </div>
       

@@ -180,7 +180,8 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Development Update",
             content: "We've made significant progress on the level generation algorithm, improving variety and ensuring a balanced difficulty curve throughout the game."
           }
-        ]
+        ],
+        downloadLink: "#" // Placeholder for Windows download link
       };
       
       renderGameDetail(gameData);
@@ -207,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ${game.tags.map(tag => `<span class="game-tag">${tag}</span>`).join('')}
               </div>
               
-              <a href="#" class="fantasy-button-fixed">Wishlist Now</a>
+              ${game.downloadLink ? `<a href="${game.downloadLink}" class="fantasy-button-fixed">Download for Windows</a>` : ''}
             </div>
           </div>
           
@@ -239,12 +240,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
           
-          <div class="game-detail-cta">
-            <h2 class="cta-title">Join Our Community</h2>
-            <p class="cta-description">Be part of the PixelJump journey! Join our Discord server to connect with other players, share feedback, and get exclusive updates on development progress.</p>
-            <a href="#" class="gold-button-fixed">Join Discord</a>
-          </div>
-          
           <div class="game-detail-updates">
             <h2 class="section-title">Development Updates</h2>
             
@@ -264,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
       gameDetailContainer.innerHTML = content;
       
       // Add animation classes to elements
-      const elements = gameDetailContainer.querySelectorAll('.game-detail-header, .game-detail-features, .game-detail-screenshots, .game-detail-cta, .game-detail-updates');
+      const elements = gameDetailContainer.querySelectorAll('.game-detail-header, .game-detail-features, .game-detail-screenshots, .game-detail-updates');
       elements.forEach((element, index) => {
         element.classList.add('fade-in-element');
         setTimeout(() => {

@@ -22,8 +22,7 @@ const GamesSection = () => {
       description: "A retro-inspired platformer with modern twists, challenging players with precise jumps and creative level designs.",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       status: "Released",
-      playLink: "#",
-      downloadLink: "#"
+      downloadLink: "#" // Placeholder for Windows download
     }
   ];
   
@@ -93,15 +92,9 @@ const GamesSection = () => {
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
-                  {activeGame.playLink && (
-                    <a href={activeGame.playLink} className="fantasy-button-fixed">
-                      <span>Play Now</span>
-                    </a>
-                  )}
-                  
                   {activeGame.downloadLink && (
                     <a href={activeGame.downloadLink} className="gold-button-fixed">
-                      <span>Download</span>
+                      <span>Download for Windows</span>
                     </a>
                   )}
                   

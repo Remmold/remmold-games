@@ -43,7 +43,7 @@ const Index = () => {
   const recentPosts = [
     {
       id: 1,
-      title: "How to Add Blog Posts to the RemmoldGames Website",
+      title: "Development Update: PixelJump Progress",
       date: "Current Date",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
       gameId: 4
