@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
           },    */
 
         ],
-        downloadLink: "#" ,// Placeholder for Windows download link
+        downloadLink: "https://github.com/Remmold/remmold-games/releases/download/v0.1-demo/PixelJump_v0.1-demo.zip" ,// Placeholder for Windows download link
         assetLink: "https://assetstore.unity.com/packages/2d/environments/2d-platformer-tileset-173155"
       };
       
