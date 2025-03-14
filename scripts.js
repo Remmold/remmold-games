@@ -308,3 +308,26 @@ styleSheet.textContent = `
   }
 `;
 document.head.appendChild(styleSheet);
+
+
+//blog post js
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("blog-posts.json")
+    .then(response => response.json())
+    .then(posts => {
+      const blogContainer = document.getElementById("blogPostsContainer");
+      blogContainer.innerHTML = posts.map(post => `
+        <article class="blog-post-card">
+          <div class="post-image">
+            <img src="${post.image}" alt="${post.title}" loading="lazy">
+          </div>
+          <div class="post-content">
+            <span class="post-date">${post.date}</span>
+            <h3 class="post-title">${post.title}</h3>
+            <p class="post-excerpt">${post.excerpt}</p>
+            <a href="blog-post.html?id=${post.id}" class="fantasy-button-fixed">Read More</a>
+          </div>
+        </article>
+      `).join('');
+    });
+});

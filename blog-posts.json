@@ -1,0 +1,27 @@
+[
+    {
+      "id": "pixel-animation",
+      "title": "The Art of Pixel Animation",
+      "date": "October 15, 2023",
+      "image": "assets/images/pixel-animation.png",
+      "excerpt": "Discover how we bring our retro-styled characters to life...",
+      "content": "<p>Pixel animation is a complex process that involves frame-by-frame drawing techniques. We use modern tools combined with traditional principles to bring our characters to life...</p>"
+    },
+    {
+      "id": "level-design",
+      "title": "Level Design Principles in PixelJump",
+      "date": "September 28, 2023",
+      "image": "assets/images/level-design.png",
+      "excerpt": "Exploring the fundamentals that guide our level design...",
+      "content": "<p>When designing levels for PixelJump, we focused on making movement feel fluid and satisfying while keeping challenges engaging...</p>"
+    },
+    {
+      "id": "game-music",
+      "title": "Composing Fantasy Soundtracks",
+      "date": "September 10, 2023",
+      "image": "assets/images/game-music.png",
+      "excerpt": "Creating immersive soundtracks that enhance the game world...",
+      "content": "<p>Music plays a huge role in setting the tone for a game. We take inspiration from classical fantasy soundtracks to compose melodies that blend seamlessly with gameplay...</p>"
+    }
+  ]
+  

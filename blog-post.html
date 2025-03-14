@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - RemmoldGames</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <a href="blog.html">⬅ Back to Blog</a>
+    </nav>
+
+    <!-- Blog Post Container -->
+    <div class="blog-post-container">
+      <h1 id="post-title"></h1>
+      <p id="post-date"></p>
+      <img id="post-image" alt="">
+      <div id="post-content"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get("id");
+
+        fetch("blog-posts.json")
+          .then(response => response.json())
+          .then(posts => {
+            const post = posts.find(p => p.id === postId);
+            if (post) {
+              document.getElementById("post-title").textContent = post.title;
+              document.getElementById("post-date").textContent = post.date;
+              document.getElementById("post-image").src = post.image;
+              document.getElementById("post-image").alt = post.title;
+              document.getElementById("post-content").innerHTML = post.content;
+            } else {
+              document.querySelector(".blog-post-container").innerHTML = "<p>Post not found.</p>";
+            }
+          });
+      });
+    </script>
+  </body>
+</html>
