@@ -311,12 +311,37 @@ document.head.appendChild(styleSheet);
 
 
 //blog post js
+
+
 document.addEventListener("DOMContentLoaded", function () {
   fetch("blog-posts.json")
     .then(response => response.json())
     .then(posts => {
+      if (posts.length === 0) return;
+
+      // Sort posts by date (newest first)
+      posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      // Get the latest post
+      const latestPost = posts[0];
+
+      // Insert Featured Post
+      const featuredPostContainer = document.querySelector(".featured-post");
+      featuredPostContainer.innerHTML = `
+        <div class="featured-post-image">
+          <img src="${latestPost.image}" alt="${latestPost.title}" loading="lazy">
+        </div>
+        <div class="featured-post-content">
+          <span class="post-date">${latestPost.date}</span>
+          <h2 class="post-title">${latestPost.title}</h2>
+          <p class="post-excerpt">${latestPost.excerpt}</p>
+          <a href="blog-post.html?id=${latestPost.id}" class="fantasy-button-fixed">Read More</a>
+        </div>
+      `;
+
+      // Insert Remaining Blog Posts
       const blogContainer = document.getElementById("blogPostsContainer");
-      blogContainer.innerHTML = posts.map(post => `
+      blogContainer.innerHTML = posts.slice(1).map(post => `
         <article class="blog-post-card">
           <div class="post-image">
             <img src="${post.image}" alt="${post.title}" loading="lazy">
@@ -331,3 +356,4 @@ document.addEventListener("DOMContentLoaded", function () {
       `).join('');
     });
 });
+
