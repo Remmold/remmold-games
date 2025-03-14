@@ -1,18 +1,238 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>enchanted-portfolio-vistas</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>RemmoldGames</title>
+    <meta name="description" content="Fantasy game development portfolio" />
+    <meta name="author" content="RemmoldGames" />
     <meta property="og:image" content="/og-image.png" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar">
+      <div class="fantasy-container nav-container">
+        <a href="#" class="nav-logo">
+          <div class="logo-text">
+            <span class="text-fantasy-gold">RemmoldGames</span>
+          </div>
+        </a>
+
+        <div class="nav-links desktop-nav">
+          <a href="#" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <div class="dropdown">
+            <button class="nav-link dropdown-btn">Games <i class="dropdown-icon">▼</i></button>
+            <div class="dropdown-content">
+              <a href="#games">PixelJump</a>
+            </div>
+          </div>
+          <a href="#collaborators" class="nav-link">Collaborators</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span class="menu-icon">☰</span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav">
+        <div class="mobile-nav-links">
+          <a href="#" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <button class="mobile-dropdown-btn">
+            Games <i class="dropdown-icon">▼</i>
+          </button>
+          <div class="mobile-dropdown-content hidden">
+            <a href="#games">PixelJump</a>
+          </div>
+          <a href="#collaborators" class="nav-link">Collaborators</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content fantasy-container">
+        <h1 class="hero-title">Welcome to the Realm of <span class="text-fantasy-gold">Fantasy Gaming</span></h1>
+        <p class="hero-subtitle">Embark on an epic journey through our handcrafted digital adventures</p>
+        <div class="hero-buttons">
+          <a href="#games" class="fantasy-button-fixed">Discover Our Games</a>
+          <a href="#contact" class="gold-button-fixed">Join Our Quest</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="fantasy-container">
+        <h2 class="section-title">Our Epic Tale</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Founded in the mystical year of 2023, RemmoldGames is a gathering of passionate adventurers dedicated to crafting immersive fantasy gaming experiences.</p>
+            <p>Our band of developers, artists, and storytellers work together to bring magical worlds to life, where every player can become the hero of their own legend.</p>
+            <p>With a focus on rich narratives and captivating gameplay, we strive to create games that transport players to realms where imagination knows no bounds.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <h3 class="stat-value">2023</h3>
+              <p class="stat-label">Year Founded</p>
+            </div>
+            <div class="stat-card">
+              <h3 class="stat-value">7+</h3>
+              <p class="stat-label">Team Members</p>
+            </div>
+            <div class="stat-card">
+              <h3 class="stat-value">3</h3>
+              <p class="stat-label">Games in Development</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="section games-section">
+      <div class="fantasy-container">
+        <h2 class="section-title">Our Legendary Quests</h2>
+        <div class="games-grid">
+          <div class="game-card">
+            <div class="game-image">
+              <img src="https://placehold.co/600x400?text=PixelJump" alt="PixelJump Game" loading="lazy" />
+            </div>
+            <div class="game-content">
+              <h3 class="game-title">PixelJump</h3>
+              <p class="game-description">A retro-styled platformer set in a world where pixels come to life. Navigate through challenging levels, collect magical artifacts, and defeat the glitch king.</p>
+              <div class="game-tags">
+                <span class="game-tag">Platformer</span>
+                <span class="game-tag">Retro</span>
+                <span class="game-tag">Adventure</span>
+              </div>
+              <a href="game-detail.html?game=pixeljump" class="fantasy-button-fixed">Learn More</a>
+            </div>
+          </div>
+          
+          <!-- Add more game cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaborators Section -->
+    <section id="collaborators" class="section collaborators-section">
+      <div class="fantasy-container">
+        <h2 class="section-title">Our Guild Members</h2>
+        <div class="collaborators-grid">
+          <div class="collaborator-card">
+            <div class="collaborator-avatar">
+              <img src="https://placehold.co/150x150?text=CM" alt="Creative Mage" loading="lazy" />
+            </div>
+            <h3 class="collaborator-name">Creative Mage</h3>
+            <p class="collaborator-role">Art Director</p>
+            <p class="collaborator-description">Master of visual enchantments, bringing fantasy worlds to life through art.</p>
+          </div>
+          
+          <div class="collaborator-card">
+            <div class="collaborator-avatar">
+              <img src="https://placehold.co/150x150?text=CW" alt="Code Wizard" loading="lazy" />
+            </div>
+            <h3 class="collaborator-name">Code Wizard</h3>
+            <p class="collaborator-role">Lead Developer</p>
+            <p class="collaborator-description">Weaver of digital spells, turning ideas into interactive experiences.</p>
+          </div>
+          
+          <div class="collaborator-card">
+            <div class="collaborator-avatar">
+              <img src="https://placehold.co/150x150?text=SB" alt="Story Bard" loading="lazy" />
+            </div>
+            <h3 class="collaborator-name">Story Bard</h3>
+            <p class="collaborator-role">Narrative Designer</p>
+            <p class="collaborator-description">Crafter of epic tales and character journeys that captivate players.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="fantasy-container">
+        <h2 class="section-title">Join Our Adventure</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <p>Have questions about our quests or wish to join our guild? Send a magical message our way!</p>
+            <div class="contact-method">
+              <span class="contact-icon">✉️</span>
+              <span>contact@remmoldgames.com</span>
+            </div>
+            <div class="contact-method">
+              <span class="contact-icon">🏰</span>
+              <span>Crystal Tower, Digital Realm</span>
+            </div>
+          </div>
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="gold-button-fixed">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="fantasy-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="text-fantasy-gold">RemmoldGames</span>
+            <p class="footer-tagline">Crafting Digital Fantasy Since 2023</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-links-column">
+              <h4 class="footer-links-title">Navigation</h4>
+              <a href="#">Home</a>
+              <a href="#about">About</a>
+              <a href="#games">Games</a>
+              <a href="#collaborators">Collaborators</a>
+              <a href="blog.html">Blog</a>
+              <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-links-column">
+              <h4 class="footer-links-title">Social</h4>
+              <a href="#" target="_blank">Twitter</a>
+              <a href="#" target="_blank">Instagram</a>
+              <a href="#" target="_blank">Discord</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 RemmoldGames. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+
+    <script src="scripts.js"></script>
   </body>
 </html>

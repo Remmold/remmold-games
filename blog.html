@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - RemmoldGames</title>
+    <meta name="description" content="Fantasy game development blog" />
+    <meta name="author" content="RemmoldGames" />
+    <meta property="og:image" content="/og-image.png" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar">
+      <div class="fantasy-container nav-container">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-text">
+            <span class="text-fantasy-gold">RemmoldGames</span>
+          </div>
+        </a>
+
+        <div class="nav-links desktop-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#about" class="nav-link">About</a>
+          <div class="dropdown">
+            <button class="nav-link dropdown-btn">Games <i class="dropdown-icon">▼</i></button>
+            <div class="dropdown-content">
+              <a href="index.html#games">PixelJump</a>
+            </div>
+          </div>
+          <a href="index.html#collaborators" class="nav-link">Collaborators</a>
+          <a href="blog.html" class="nav-link active">Blog</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <span class="menu-icon">☰</span>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav">
+        <div class="mobile-nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="index.html#about" class="nav-link">About</a>
+          <button class="mobile-dropdown-btn">
+            Games <i class="dropdown-icon">▼</i>
+          </button>
+          <div class="mobile-dropdown-content hidden">
+            <a href="index.html#games">PixelJump</a>
+          </div>
+          <a href="index.html#collaborators" class="nav-link">Collaborators</a>
+          <a href="blog.html" class="nav-link active">Blog</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="blog-header">
+      <div class="fantasy-container">
+        <h1 class="fantasy-title">Chronicles of Development</h1>
+        <p class="blog-subtitle">Updates, insights, and tales from our game development journey</p>
+      </div>
+    </header>
+
+    <!-- Blog Content -->
+    <section class="blog-section">
+      <div class="fantasy-container">
+        <!-- Featured Post -->
+        <div class="featured-post">
+          <div class="featured-post-image">
+            <img src="https://placehold.co/1200x600?text=Featured+Post" alt="Featured blog post" loading="lazy">
+          </div>
+          <div class="featured-post-content">
+            <span class="post-date">October 15, 2023</span>
+            <h2 class="post-title">The Art of Pixel Animation</h2>
+            <p class="post-excerpt">Discover how we bring our retro-styled characters to life through the magic of pixel animation techniques...</p>
+            <a href="#" class="fantasy-button-fixed">Read More</a>
+          </div>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="blog-posts-grid">
+          <article class="blog-post-card">
+            <div class="post-image">
+              <img src="https://placehold.co/600x400?text=Blog+Post+1" alt="Blog post about game design" loading="lazy">
+            </div>
+            <div class="post-content">
+              <span class="post-date">September 28, 2023</span>
+              <h3 class="post-title">Level Design Principles in PixelJump</h3>
+              <p class="post-excerpt">Exploring the fundamentals that guide our approach to creating engaging and challenging game levels...</p>
+              <a href="game-detail.html?game=pixeljump" class="post-link">Related: PixelJump Game</a>
+            </div>
+          </article>
+          
+          <article class="blog-post-card">
+            <div class="post-image">
+              <img src="https://placehold.co/600x400?text=Blog+Post+2" alt="Blog post about soundtrack" loading="lazy">
+            </div>
+            <div class="post-content">
+              <span class="post-date">September 10, 2023</span>
+              <h3 class="post-title">Composing Fantasy Soundtracks</h3>
+              <p class="post-excerpt">Our audio team shares insights on creating immersive music that enhances the fantasy gaming experience...</p>
+            </div>
+          </article>
+          
+          <article class="blog-post-card">
+            <div class="post-image">
+              <img src="https://placehold.co/600x400?text=Blog+Post+3" alt="Blog post about character design" loading="lazy">
+            </div>
+            <div class="post-content">
+              <span class="post-date">August 22, 2023</span>
+              <h3 class="post-title">Character Design Evolution</h3>
+              <p class="post-excerpt">Follow the journey of our main character from initial sketch to final game sprite...</p>
+            </div>
+          </article>
+        </div>
+        
+        <!-- Example Blog Post Template -->
+        <div class="blog-post-template fantasy-card">
+          <h3>Adding a New Blog Post</h3>
+          <p>To add a new blog post, copy the article structure below and customize as needed:</p>
+          <pre class="code-block">
+&lt;article class="blog-post-card"&gt;
+  &lt;div class="post-image"&gt;
+    &lt;img src="path-to-image.jpg" alt="Description of blog post" loading="lazy"&gt;
+  &lt;/div&gt;
+  &lt;div class="post-content"&gt;
+    &lt;span class="post-date"&gt;Month Day, Year&lt;/span&gt;
+    &lt;h3 class="post-title"&gt;Your Blog Post Title&lt;/h3&gt;
+    &lt;p class="post-excerpt"&gt;A brief description of your blog post content...&lt;/p&gt;
+    &lt;!-- Optional game reference --&gt;
+    &lt;a href="game-detail.html?game=gameid" class="post-link"&gt;Related: Game Name&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="fantasy-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <span class="text-fantasy-gold">RemmoldGames</span>
+            <p class="footer-tagline">Crafting Digital Fantasy Since 2023</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-links-column">
+              <h4 class="footer-links-title">Navigation</h4>
+              <a href="index.html">Home</a>
+              <a href="index.html#about">About</a>
+              <a href="index.html#games">Games</a>
+              <a href="index.html#collaborators">Collaborators</a>
+              <a href="blog.html">Blog</a>
+              <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="footer-links-column">
+              <h4 class="footer-links-title">Social</h4>
+              <a href="#" target="_blank">Twitter</a>
+              <a href="#" target="_blank">Instagram</a>
+              <a href="#" target="_blank">Discord</a>
+              <a href="#" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 RemmoldGames. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
