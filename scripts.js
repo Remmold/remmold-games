@@ -178,8 +178,9 @@ document.addEventListener('DOMContentLoaded', function() {
           },    */
 
         ],
-        downloadLink: "https://github.com/Remmold/remmold-games/releases/download/v0.1-demo/PixelJump_v0.1-demo.zip" ,// Placeholder for Windows download link
-        assetLink: "https://assetstore.unity.com/packages/2d/environments/2d-platformer-tileset-173155"
+        downloadLink: "https://github.com/Remmold/remmold-games/releases/latest/download/PixelJump_v0.1-demo.zip",// Link to latest demo version
+        assetLink: "https://assetstore.unity.com/packages/2d/environments/2d-platformer-tileset-173155" //Link to unity asset store where i bought the assetpack
+      
       };
       
       renderGameDetail(gameData);
