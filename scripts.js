@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
         longDescription: "PixelJump combines the nostalgic charm of classic platformer games with modern gameplay innovations. Each level presents new challenges and obstacles that will test your reflexes and problem-solving skills. The procedural generation system ensures that no two playthroughs are ever the same, providing endless entertainment and replayability.\n\nWith a unique art style that blends pixel art with modern lighting and effects, PixelJump creates a visually stunning world that pays homage to gaming's past while embracing the technological capabilities of the present.",
         platforms: ["PC", "Mac", "Mobile"],
         status: "In Development",
-        releaseDate: "Q3 2023",
+        releaseDate: "TBD",
         tags: ["Platformer", "Pixel Art", "Indie", "Action", "Single Player"],
         features: [
           {
@@ -159,27 +159,23 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         ],
         screenshots: [
-          "https://images.unsplash.com/photo-1586336900273-53d3668f9251?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-          "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-          "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-          "https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+          "assets/images/TitleScreen.png",
+          "assets/images/nighttime.png",
+          "assets/images/treehouse.png",
+
         ],
         updates: [
           {
-            date: "June 15, 2023",
-            title: "Alpha Testing Begins",
-            content: "We're excited to announce that PixelJump has entered alpha testing! A select group of testers will be playing through the first 10 levels and providing feedback on gameplay mechanics and overall feel."
+            date: "March 14, 2025",
+            title: "Website Up and Running",
+            content: "Im happy to say that the webpage has been posted online and sharing of my game demo can finally begin"
           },
-          {
-            date: "May 3, 2023",
-            title: "New Enemy Types Revealed",
-            content: "Today we're unveiling three new enemy types that will challenge players in different ways. Each has unique movement patterns and abilities that will require different strategies to overcome."
-          },
-          {
-            date: "April 12, 2023",
-            title: "Development Update",
-            content: "We've made significant progress on the level generation algorithm, improving variety and ensuring a balanced difficulty curve throughout the game."
-          }
+          /*{
+            date: "",
+            title: "",
+            content: ""
+          },    */
+
         ],
         downloadLink: "#" // Placeholder for Windows download link
       };
