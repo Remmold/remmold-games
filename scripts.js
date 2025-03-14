@@ -129,34 +129,35 @@ document.addEventListener('DOMContentLoaded', function() {
         features: [
           {
             icon: "⚡",
-            title: "Dynamic Gameplay",
-            description: "Experience fluid controls and responsive mechanics that make each jump and movement satisfying."
+            title: "Dynamic Weathereffects",
+            description: "Upcomming weather effects to make diffrent playthroughs of a level have a diffrent feel to them"
           },
           {
             icon: "🎮",
-            title: "Retro-Modern Fusion",
-            description: "Enjoy the nostalgic feel of pixel art combined with modern game design principles and effects."
+            title: "Multiple inputs",
+            description: "Wether you prefer a mouse and keyboard och a console controller. the game will support common systems"
           },
-          {
+          /*{
             icon: "🔄",
-            title: "Procedural Generation",
-            description: "Encounter new challenges with every playthrough thanks to our advanced level generation system."
-          },
-          {
-            icon: "🏆",
-            title: "Achievement System",
-            description: "Unlock achievements and compete with friends on the global leaderboard."
-          },
-          {
-            icon: "🎵",
-            title: "Original Soundtrack",
-            description: "Immerse yourself in the game with our original chiptune-inspired soundtrack that evolves as you progress."
+            title: "",
+            description: ""
           },
           {
             icon: "💾",
-            title: "Cross-Platform Save",
-            description: "Continue your progress across different devices with our cloud save feature."
-          }
+            title: "",
+            description: ""
+          }*/
+          {
+            icon: "🏆",
+            title: "Achievement System",
+            description: "Currently not a thing"
+          },
+          {
+            icon: "🎵",
+            title: "Experimental music",
+            description: "Experimenting alot with environmental effects affecting music."
+          },
+     
         ],
         screenshots: [
           "assets/images/TitleScreen.png",
@@ -205,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ${game.tags.map(tag => `<span class="game-tag">${tag}</span>`).join('')}
               </div>
               
-              ${game.downloadLink ? `<a href="${game.downloadLink}" class="fantasy-button-fixed">Download for Windows</a>` : ''} 
+              ${game.downloadLink ? `<a href="${game.downloadLink}" class="fantasy-button-fixed">Download Demo for Windows</a>` : ''} 
               ${game.assetLink ? `<a href="${game.assetLink}" class="fantasy-button-fixed" target="_blank" rel="noopener noreferrer">Assets</a>` : ''}
               
             </div>
