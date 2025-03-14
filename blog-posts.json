@@ -1,27 +1,10 @@
 [
     {
-      "id": "pixel-animation",
-      "title": "The Art of Pixel Animation",
-      "date": "2023-10-15",
-      "image": "assets/images/pixel-animation.png",
-      "excerpt": "Discover how we bring our retro-styled characters to life...",
-      "content": "<p>Pixel animation is a complex process that involves frame-by-frame drawing techniques...</p>"
-    },
-    {
-      "id": "level-design",
-      "title": "Level Design Principles in PixelJump",
-      "date": "2023-09-28",
-      "image": "assets/images/level-design.png",
-      "excerpt": "Exploring the fundamentals that guide our level design...",
-      "content": "<p>When designing levels for PixelJump, we focused on making movement feel fluid...</p>"
-    },
-    {
-      "id": "game-music",
-      "title": "Composing Fantasy Soundtracks",
-      "date": "2023-09-10",
-      "image": "assets/images/game-music.png",
-      "excerpt": "Creating immersive soundtracks that enhance the game world...",
-      "content": "<p>Music plays a huge role in setting the tone for a game...</p>"
+      "id": "pixeljump-v0-1-release",
+      "title": "PixelJump v0.1 Demo Release & Website Launch",
+      "date": "2025-03-14",
+      "image": "https://placehold.co/1200x600?text=Pixeljump Demo out!!",
+      "excerpt": "PixelJump v0.1 Demo is here! Plus, the official RemmoldGames website is now live...",
+      "content": "<p>I'm excited to announce the first public demo of <strong>PixelJump v0.1</strong>!</p><p>This demo lets you experience the early platforming mechanics and movement system.</p><h3>What's Included?</h3><ul><li>Basic platforming mechanics</li><li>Coins, spikes, and interactive elements</li><li>Experimental weather effects</li><li>Keyboard & Controller support</li></ul><h3>What's Missing?</h3><ul><li>More levels (in development)</li><li>Music and sound effects (coming soon)</li><li>Achievements and new mechanics (future updates)</li></ul><h3>Download the Demo</h3><p><a href='https://github.com/Remmold/remmold-games/releases/latest/download/PixelJump_v0.1-demo.zip' class='fantasy-button-fixed'>Download PixelJump v0.1</a></p><p>Let me know what you think!</p>"
     }
   ]
-  
