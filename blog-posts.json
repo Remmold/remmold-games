@@ -3,7 +3,7 @@
       "id": "pixeljump-v0-1-release",
       "title": "PixelJump v0.1 Demo Release & Website Launch",
       "date": "2025-03-14",
-      "image": "https://placehold.co/1200x600?text=Pixeljump Demo out!!",
+      "image": "assets/Blogheads/game-title-branch.png",
       "excerpt": "PixelJump v0.1 Demo is here! Plus, the official RemmoldGames website is now live...",
       "content": "<p>I'm excited to announce the first public demo of <strong>PixelJump v0.1</strong>!</p><p>This demo lets you experience the early platforming mechanics and movement system.</p><h3>What's Included?</h3><ul><li>Basic platforming mechanics</li><li>Coins, spikes, and interactive elements</li><li>Experimental weather effects</li><li>Keyboard & Controller support</li></ul><h3>What's Missing?</h3><ul><li>More levels (in development)</li><li>Music and sound effects (coming soon)</li><li>Achievements and new mechanics (future updates)</li></ul><h3>Download the Demo</h3><p><a href='https://github.com/Remmold/remmold-games/releases/latest/download/PixelJump_v0.1-demo.zip' class='fantasy-button-fixed'>Download PixelJump v0.1</a></p><p>Let me know what you think!</p>"
     }

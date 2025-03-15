@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const gameData = {
         id: 1,
         title: "PixelJump",
-        image: "assets/images/TitleScreen.png",
+        image: "assets/Blogheads/game-title-branch.png",
         description: "PixelJump is a challenging platformer game with retro pixel art and modern gameplay mechanics. Navigate through increasingly difficult levels, avoid obstacles, and collect power-ups to reach the end goal. The game features procedurally generated levels, ensuring a unique experience every time you play.",
         longDescription: "PixelJump combines the nostalgic charm of classic platformer games with modern gameplay innovations. Each level presents new challenges and obstacles that will test your reflexes and problem-solving skills. The procedural generation system ensures that no two playthroughs are ever the same, providing endless entertainment and replayability.\n\nWith a unique art style that blends pixel art with modern lighting and effects, PixelJump creates a visually stunning world that pays homage to gaming's past while embracing the technological capabilities of the present.",
         platforms: ["PC"],
@@ -160,9 +160,10 @@ document.addEventListener('DOMContentLoaded', function() {
      
         ],
         screenshots: [
-          "assets/images/TitleScreen.png",
-          "assets/images/nighttime.png",
-          "assets/images/treehouse.png",
+          "assets/Screenshots/TitleScreen.png",
+          "assets/Screenshots/nighttime.png",
+          "assets/Screenshots/treehouse.png",
+          "assets/Blogheads/game-title-branch.png"
 
         ],
         updates: [
@@ -171,11 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Website Up and Running",
             content: "Im happy to say that the webpage has been posted online and sharing of my game demo can finally begin"
           },
-          /*{
-            date: "",
-            title: "",
-            content: ""
-          },    */
+          {
+            date: "March 14, 2025",
+            title: "Menus and volumecontrol",
+            content: "Today ive created a Settingsmenu with volumecontrol and placeholders for other settings <br> I have also been blessed with a new titlescreen image from a talented friend named Daniel, will fix proper links to his portfolios soon"
+          },   
 
         ],
         downloadLink: "https://github.com/Remmold/remmold-games/releases/latest/download/PixelJump_v0.1-demo.zip",// Link to latest demo version
