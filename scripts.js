@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
             content: "Im happy to say that the webpage has been posted online and sharing of my game demo can finally begin"
           },
           {
-            date: "March 14, 2025",
+            date: "March 15, 2025",
             title: "Menus and volumecontrol",
             content: "Today ive created a Settingsmenu with volumecontrol and placeholders for other settings <br> I have also been blessed with a new titlescreen image from a talented friend named Daniel, will fix proper links to his portfolios soon"
           },   
