@@ -168,15 +168,21 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         updates: [
           {
-            date: "March 14, 2025",
-            title: "Website Up and Running",
-            content: "Im happy to say that the webpage has been posted online and sharing of my game demo can finally begin"
-          },
+            date: "March 17, 2025",
+            title: "Let there be light",
+            content: "Tonight i created the sun and the moon and thus there was light. pretty poor light at that but light nonetheless! tomorrow i look forward to tuning the sun and the moon and if time permits ill add some torches and lit up object across the map to make it more immersive"
+          }, 
           {
             date: "March 15, 2025",
             title: "Menus and volumecontrol",
             content: "Today ive created a Settingsmenu with volumecontrol and placeholders for other settings <br> I have also been blessed with a new titlescreen image from a talented friend named Daniel, will fix proper links to his portfolios soon"
-          },   
+          }, 
+          {
+            date: "March 14, 2025",
+            title: "Website Up and Running",
+            content: "Im happy to say that the webpage has been posted online and sharing of my game demo can finally begin"
+          },
+            
 
         ],
         downloadLink: "https://github.com/Remmold/remmold-games/releases/latest/download/PixelJump_v0.1-demo.zip",// Link to latest demo version
