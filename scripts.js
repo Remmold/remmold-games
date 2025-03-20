@@ -168,6 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         updates: [
           {
+            date: "March 20, 2025",
+            title: "Better Cycles",
+            content: "Now the sun and moon are alot better than before and ive added changes to night/daytime cycle that correlates properly to the musiclength."
+          }, 
+          {
             date: "March 17, 2025",
             title: "Let there be light",
             content: "Tonight i created the sun and the moon and thus there was light. pretty poor light at that but light nonetheless! tomorrow i look forward to tuning the sun and the moon and if time permits ill add some torches and lit up object across the map to make it more immersive"
