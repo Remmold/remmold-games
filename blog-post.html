@@ -6,8 +6,17 @@
     <title>Blog Post - RemmoldGames</title>
     <link rel="stylesheet" href="styles.css">
   </head>
+  <script>
+    const basePath = location.hostname.includes("github.io") ? "/remmold-games" : "";
+  
+    document.querySelectorAll("nav .nav-link, nav .dropdown-content a, nav .nav-logo").forEach(link => {
+      const href = link.getAttribute("href");
+      if (href && href.startsWith("/")) {
+        link.setAttribute("href", basePath + href);
+      }
+    });
+  </script>
   <body>
-    <!-- Navbar -->
   <!-- Navbar -->
   <nav id="navbar" class="navbar">
     <div class="fantasy-container nav-container">
