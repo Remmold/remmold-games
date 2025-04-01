@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
       rocketracer: {
         id: 2,
         title: "RocketRacer",
-        image: "assets/RocketRacer/titlecard.png",
+        image: "assets/Blogheads/RocketRacer.png",
         description: "Fast-paced Unity WebGL game. Fly, dodge, and win.",
         longDescription:
           "RocketRacer is a high-speed obstacle-dodging WebGL game built in Unity...",
@@ -135,8 +135,8 @@ document.addEventListener("DOMContentLoaded", function () {
           { icon: "🌌", title: "Stylized World", description: "A small looping course in the stars." },
         ],
         screenshots: [
-          "assets/RocketRacer/screen1.png",
-          "assets/RocketRacer/screen2.png",
+          "assets/Blogheads/RocketRacer.png",
+
         ],
         updates: [
           {
