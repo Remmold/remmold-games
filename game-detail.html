@@ -13,17 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
-  <script>
-    const isGitHub = location.hostname.includes("github.io");
-    const base = isGitHub ? "/remmold-games" : "";
-  
-    document.querySelectorAll("a[href^='/']").forEach(link => {
-      const original = link.getAttribute("href");
-      if (original) {
-        link.setAttribute("href", base + original);
-      }
-    });
-  </script>
+
   <body>
     <!-- Navbar -->
     <nav id="navbar" class="navbar">
@@ -40,8 +30,8 @@
           <div class="dropdown">
             <button class="nav-link dropdown-btn">Games <i class="dropdown-icon">▼</i></button>
             <div class="dropdown-content">
-              <a href="/game-detail.html?game=pixeljump">PixelJump</a>
-              <a href="/game-detail.html?game=rocketracer">RocketRacer</a>
+              <a href="/remmold-games/game-detail.html?game=pixeljump">PixelJump</a>
+              <a href="/remmold-games/game-detail.html?game=rocketracer">RocketRacer</a>
             </div>
           </div>
           <a href="/remmold-games/blog.html" class="nav-link">Blog</a>
