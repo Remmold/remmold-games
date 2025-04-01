@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
         downloadLink: "",
         assetLink: "",
+        playnowLink: "https://remmold.github.io/remmold-games/games/RocketRacer/index.html",
       },
     };
 
@@ -177,6 +178,9 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             ${game.downloadLink ? `<a href="${game.downloadLink}" class="fantasy-button-fixed">Download Demo</a>` : ""}
             ${game.assetLink ? `<a href="${game.assetLink}" class="fantasy-button-fixed" target="_blank">Assets</a>` : ""}
+            ${game.playnowLink ? `<a href="${game.playnowLink}" class="fantasy-button-fixed" target="_blank" rel="noopener noreferrer">Play Now in Browser</a>` : ''}
+
+
           </div>
         </div>
 
