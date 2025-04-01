@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         description: "PixelJump is a challenging platformer game with retro pixel art and modern gameplay mechanics. Navigate through increasingly difficult levels, avoid obstacles, and collect power-ups to reach the end goal. The game features procedurally generated levels, ensuring a unique experience every time you play.",
         longDescription: "PixelJump is a fast-paced 2D platformer where players embark on a daring quest to rescue their beloved chicken companion from the clutches of a mischievous villain. Armed with precise platforming skills, players must navigate treacherous landscapes filled with spikes, moving platforms, and devious traps. The game embraces a <b>fluid movement system</b>, rewarding momentum and mastery of jumps. Each level introduces new obstacles and challenges, pushing players to refine their skills while uncovering the mystery behind the chicken’s capture. With vibrant <i>pixel-art visuals</i> and tight, responsive controls, <b>PixelJump</b> delivers an engaging adventure full of action, precision, and charm. 🐔🚀",
         platforms: ["PC"],
-        status: "In Development",
+        status: "Paused",
         releaseDate: "TBD",
         tags: ["Platformer", "Pixel Art", "Indie", "Action", "Single Player"],
         features: [
