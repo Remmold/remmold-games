@@ -1,4 +1,14 @@
+
+
 [
+  {
+    "id": "rocketracer-webgl-launch",
+    "title": "RocketRacer Prototype Now Playable in WebGL",
+    "date": "2025-04-01",
+    "image": "assets/Blogheads/RocketRacer.png",
+    "excerpt": "RocketRacer is live! A short 3D prototype to kick off my Unity journey is now playable in your browser...",
+    "content": "<p><strong>RocketRacer</strong> is my very first experiment in <strong>Unity 3D</strong>—and it’s now playable directly in your browser!</p><p>This short prototype was built to explore Unity’s physics, camera controls, and WebGL build process.</p><h3>What's Included?</h3><ul><li>Basic 3D flying movement</li><li>A looping space-themed test course</li><li>Play-in-browser WebGL build</li><li>Stylized visuals and a sci-fi vibe</li></ul><h3>Why I Made It</h3><p>I wanted to start learning Unity’s 3D workflow and see how WebGL builds behave on GitHub Pages. RocketRacer helped me test both!</p><h3>Play in Browser</h3><p><a href='https://remmold.github.io/remmold-games/games/RocketRacer/' class='fantasy-button-fixed' target='_blank'>Play RocketRacer Now</a></p><p>It’s short and simple—but a fun milestone in my learning journey!</p>"
+  },
     {
       "id": "pixeljump-v0-1-release",
       "title": "PixelJump v0.1 Demo Release & Website Launch",
