@@ -165,7 +165,8 @@ document.addEventListener("DOMContentLoaded", function () {
           { icon: "💥", title: "Flying Obstacles", description: "Physics-based objects hurled at you with increasing speed." },
         ],
         screenshots: [
-          "assets/Blogheads/InfiniteRunner.png"
+          "assets/Blogheads/InfiniteRunner.png",
+          "assets/Screenshots/InfiniteRunnerScreenshots/InfiniteRunner_sc_1.png"
         ],
         updates: [
           {
