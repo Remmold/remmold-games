@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="game-detail-tags">
               ${game.tags.map((t) => `<span class="game-tag">${t}</span>`).join("")}
             </div>
-            ${game.downloadLink ? `<a href="${game.downloadLink}" class="fantasy-button-fixed">Download Demo</a>` : ""}
+            ${game.downloadLink ? `<a href="${game.downloadLink}" class="fantasy-button-fixed">Download Windows Demo</a>` : ""}
             ${game.assetLink ? `<a href="${game.assetLink}" class="fantasy-button-fixed" target="_blank">Assets</a>` : ""}
             ${game.playnowLink ? `<a href="${game.playnowLink}" class="fantasy-button-fixed" target="_blank" rel="noopener noreferrer">Play Now in Browser</a>` : ''}
 
