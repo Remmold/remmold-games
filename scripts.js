@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
             content: "InfiniteRunner is now live and playable in-browser on GitHub Pages. Try to survive the onslaught!",
           },
         ],
-        downloadLink: "",
+        downloadLink: "https://github.com/Remmold/remmold-games/releases/latest/download/InfiniteRunnerWindows.zip",
         assetLink: "",
         playnowLink: "https://remmold.github.io/remmold-games/games/InfiniteRunner_v0.1/index.html",
       }
