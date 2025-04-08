@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
         downloadLink: "",
         assetLink: "",
-        playnowLink: "https://remmold.github.io/remmold-games/games/InfiniteRunner/index.html",
+        playnowLink: "https://remmold.github.io/remmold-games/games/InfiniteRunner_v0.1/index.html",
       }
       
     };
