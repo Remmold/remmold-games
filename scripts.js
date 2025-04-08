@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
           { date: "March 14, 2025", title: "Website Up", content: "RemmoldGames is live!" },
         ],
         downloadLink:
-          "https://github.com/Remmold/remmold-games/releases/latest/download/PixelJump_v0.1-demo.zip",
+          "https://github.com/Remmold/remmold-games/releases/latest/download/PixelJumpWindows_v0.zip",
         assetLink:
           "https://assetstore.unity.com/packages/2d/environments/2d-platformer-tileset-173155",
       },
