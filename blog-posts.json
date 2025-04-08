@@ -2,6 +2,14 @@
 
 [
   {
+    "id": "infiniterunner-webgl-launch",
+    "title": "InfiniteRunner Now Playable in WebGL",
+    "date": "2025-04-08",
+    "image": "assets/Blogheads/InfiniteRunner.png",
+    "excerpt": "Dodge or die! InfiniteRunner throws you into a fast-paced 3D sprint against an endless wave of flying obstacles...",
+    "content": "<p><strong>InfiniteRunner</strong> is my second 3D Unity prototype—and it cranks up the pressure!</p><p>Built as part of my Unity learning journey, this project explores <strong>simple physics-based challenge design</strong> with a focus on time-based survival and player reflexes.</p><h3>What's Included?</h3><ul><li>Fast-paced, arcade-style running</li><li>Increasing difficulty over time</li><li>Physics objects flying toward you as obstacles</li><li>Stylized test environment</li><li>Playable directly in browser (WebGL)</li></ul><h3>Why I Made It</h3><p>I wanted to expand on my 3D Unity skills with a project that focused on pacing, physics interaction, and tension. This prototype helped me learn about Unity’s Rigidbody system and how to trigger events over time.</p><h3>Play in Browser</h3><p><a href='https://remmold.github.io/remmold-games/games/InfiniteRunner/' class='fantasy-button-fixed' target='_blank'>Play InfiniteRunner Now</a></p><p>Short and chaotic—this one's all about dodging, reacting, and surviving just a few seconds longer...</p>"
+  },  
+  {
     "id": "rocketracer-webgl-launch",
     "title": "RocketRacer Prototype Now Playable in WebGL",
     "date": "2025-04-01",
@@ -9,12 +17,12 @@
     "excerpt": "RocketRacer is live! A short 3D prototype to kick off my Unity journey is now playable in your browser...",
     "content": "<p><strong>RocketRacer</strong> is my very first experiment in <strong>Unity 3D</strong>—and it’s now playable directly in your browser!</p><p>This short prototype was built to explore Unity’s physics, camera controls, and WebGL build process.</p><h3>What's Included?</h3><ul><li>Basic 3D flying movement</li><li>A looping space-themed test course</li><li>Play-in-browser WebGL build</li><li>Stylized visuals and a sci-fi vibe</li></ul><h3>Why I Made It</h3><p>I wanted to start learning Unity’s 3D workflow and see how WebGL builds behave on GitHub Pages. RocketRacer helped me test both!</p><h3>Play in Browser</h3><p><a href='https://remmold.github.io/remmold-games/games/RocketRacer/' class='fantasy-button-fixed' target='_blank'>Play RocketRacer Now</a></p><p>It’s short and simple—but a fun milestone in my learning journey!</p>"
   },
-    {
-      "id": "pixeljump-v0-1-release",
-      "title": "PixelJump v0.1 Demo Release & Website Launch",
-      "date": "2025-03-14",
-      "image": "assets/Blogheads/game-title-branch.png",
-      "excerpt": "PixelJump v0.1 Demo is here! Plus, the official RemmoldGames website is now live...",
-      "content": "<p>I'm excited to announce the first public demo of <strong>PixelJump v0.1</strong>!</p><p>This demo lets you experience the early platforming mechanics and movement system.</p><h3>What's Included?</h3><ul><li>Basic platforming mechanics</li><li>Coins, spikes, and interactive elements</li><li>Experimental weather effects</li><li>Keyboard & Controller support</li></ul><h3>What's Missing?</h3><ul><li>More levels (in development)</li><li>Music and sound effects (coming soon)</li><li>Achievements and new mechanics (future updates)</li></ul><h3>Download the Demo</h3><p><a href='https://github.com/Remmold/remmold-games/releases/latest/download/PixelJump_v0.1-demo.zip' class='fantasy-button-fixed'>Download PixelJump v0.1</a></p><p>Let me know what you think!</p>"
-    }
-  ]
+  {
+    "id": "pixeljump-v0-1-release",
+    "title": "PixelJump v0.1 Demo Release & Website Launch",
+    "date": "2025-03-14",
+    "image": "assets/Blogheads/game-title-branch.png",
+    "excerpt": "PixelJump v0.1 Demo is here! Plus, the official RemmoldGames website is now live...",
+    "content": "<p>I'm excited to announce the first public demo of <strong>PixelJump v0.1</strong>!</p><p>This demo lets you experience the early platforming mechanics and movement system.</p><h3>What's Included?</h3><ul><li>Basic platforming mechanics</li><li>Coins, spikes, and interactive elements</li><li>Experimental weather effects</li><li>Keyboard & Controller support</li></ul><h3>What's Missing?</h3><ul><li>More levels (in development)</li><li>Music and sound effects (coming soon)</li><li>Achievements and new mechanics (future updates)</li></ul><h3>Download the Demo</h3><p><a href='https://github.com/Remmold/remmold-games/releases/latest/download/PixelJump_v0.1-demo.zip' class='fantasy-button-fixed'>Download PixelJump v0.1</a></p><p>Let me know what you think!</p>"
+  }
+]

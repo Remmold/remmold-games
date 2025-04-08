@@ -149,6 +149,36 @@ document.addEventListener("DOMContentLoaded", function () {
         assetLink: "",
         playnowLink: "https://remmold.github.io/remmold-games/games/RocketRacer/index.html",
       },
+      infiniterunner: {
+        id: 3,
+        title: "InfiniteRunner",
+        image: "assets/Blogheads/InfiniteRunner.png",
+        description: "Dodge or die in this Unity WebGL survival sprint.",
+        longDescription:
+          "InfiniteRunner is a fast-paced 3D prototype built in Unity, where the player races against time while dodging an ever-increasing wave of flying obstacles. Built as a physics and timing challenge, it tests your reflexes and decision-making under pressure.",
+        platforms: ["WebGL"],
+        status: "Playable Prototype",
+        releaseDate: "April 8, 2025",
+        tags: ["WebGL", "Unity", "Prototype", "3D", "Reflex"],
+        features: [
+          { icon: "⏱️", title: "Time Pressure", description: "Survive as long as you can against incoming chaos." },
+          { icon: "💥", title: "Flying Obstacles", description: "Physics-based objects hurled at you with increasing speed." },
+        ],
+        screenshots: [
+          "assets/Blogheads/InfiniteRunner.png"
+        ],
+        updates: [
+          {
+            date: "April 8, 2025",
+            title: "WebGL Launch!",
+            content: "InfiniteRunner is now live and playable in-browser on GitHub Pages. Try to survive the onslaught!",
+          },
+        ],
+        downloadLink: "",
+        assetLink: "",
+        playnowLink: "https://remmold.github.io/remmold-games/games/InfiniteRunner/index.html",
+      }
+      
     };
 
     const gameData = games[gameName];
