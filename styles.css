@@ -1355,3 +1355,38 @@ h1 {
   text-align: left;
   max-width: 90%;
 }
+.fantasy-subtle {
+  background-color: #1e1e1e;
+  color: #d4b27a;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(212, 178, 122, 0.3);
+  transition: all 0.2s ease-in-out;
+  margin-left: 0.75rem;
+  animation: fantasyPulse 3s ease-in-out infinite;
+}
+
+.fantasy-subtle:hover {
+  background-color: #282828;
+  color: #f1d7a5;
+  border-color: rgba(241, 215, 165, 0.5);
+  box-shadow: 0 0 10px rgba(212, 178, 122, 0.25);
+  transform: scale(1.03);
+}
+
+/* 🔮 Glow animation */
+@keyframes fantasyPulse {
+  0% {
+      box-shadow: 0 0 0px rgba(212, 178, 122, 0.1);
+  }
+  50% {
+      box-shadow: 0 0 6px rgba(212, 178, 122, 0.3);
+  }
+  100% {
+      box-shadow: 0 0 0px rgba(212, 178, 122, 0.1);
+  }
+}
+
