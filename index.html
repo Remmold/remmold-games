@@ -1,33 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RemmoldGames - My Game Dev Journey</title>
-    <meta name="description" content="Personal game development journey and projects by Andreas Johansson" />
-    <meta name="author" content="Andreas Johansson" />
-    <meta property="og:image" content="/og-image.png" />
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-<!-- Navbar using relative paths -->
-<nav id="navbar" class="navbar">
-  <div class="fantasy-container nav-container">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-text">
-        <span class="text-fantasy-gold">RemmoldGames</span>
-      </div>
-    </a>
 
-    <div class="nav-links desktop-nav">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RemmoldGames - My Game Dev Journey</title>
+  <meta name="description"
+    content="Personal game development journey and projects by Andreas Johansson. Explore fantasy-inspired indie games, development updates, and playable prototypes." />
+  <meta name="author" content="Andreas Johansson" />
+  <meta name="keywords" content="indie game developer, Unity games, game development, fantasy games, RemmoldGames" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RemmoldGames - Indie Game Development" />
+  <meta property="og:description"
+    content="Explore fantasy-inspired indie games and follow my game development journey." />
+  <meta property="og:image" content="assets/Blogheads/FantasySurvivalBloghead.png" />
+  <meta property="og:url" content="https://remmold.github.io/remmold-games/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RemmoldGames - Indie Game Development" />
+  <meta name="twitter:description"
+    content="Explore fantasy-inspired indie games and follow my game development journey." />
+  <meta name="twitter:image" content="assets/Blogheads/FantasySurvivalBloghead.png" />
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar using relative paths -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="fantasy-container nav-container">
+      <a href="index.html" class="nav-logo" aria-label="RemmoldGames Home">
+        <div class="logo-text">
+          <span class="text-fantasy-gold">RemmoldGames</span>
+        </div>
+      </a>
+
+      <div class="nav-links desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <div class="dropdown">
+          <button class="nav-link dropdown-btn" aria-haspopup="true" aria-expanded="false">Games <i
+              class="dropdown-icon">▼</i></button>
+          <div class="dropdown-content" role="menu">
+            <a href="game-detail.html?game=pixeljump" role="menuitem">PixelJump</a>
+            <a href="game-detail.html?game=rocketracer" role="menuitem">RocketRacer</a>
+            <a href="game-detail.html?game=infiniterunner" role="menuitem">InfiniteRunner</a>
+          </div>
+        </div>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="index.html#contact" class="nav-link">Connect</a>
+        <a href="project-sites/FantasySurvival/" class="nav-link fantasy-highlight">✨ Fantasy Survival</a>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="menu-icon">☰</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="mobile-nav" aria-hidden="true">
+    <button class="mobile-nav-close" aria-label="Close navigation menu">✕</button>
+    <div class="mobile-nav-links">
       <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#about" class="nav-link">About</a>
-      <div class="dropdown">
-        <button class="nav-link dropdown-btn">Games <i class="dropdown-icon">▼</i></button>
-        <div class="dropdown-content">
+      <div class="mobile-dropdown">
+        <button class="mobile-dropdown-btn" aria-expanded="false">Games <i class="dropdown-icon">▼</i></button>
+        <div class="mobile-dropdown-content">
           <a href="game-detail.html?game=pixeljump">PixelJump</a>
           <a href="game-detail.html?game=rocketracer">RocketRacer</a>
           <a href="game-detail.html?game=infiniterunner">InfiniteRunner</a>
@@ -36,44 +83,48 @@
       <a href="blog.html" class="nav-link">Blog</a>
       <a href="index.html#contact" class="nav-link">Connect</a>
       <a href="project-sites/FantasySurvival/" class="nav-link fantasy-highlight">✨ Fantasy Survival</a>
-
     </div>
-
-    <button class="mobile-menu-btn" aria-label="Toggle menu">
-      <span class="menu-icon">☰</span>
-    </button>
   </div>
-</nav>
 
-
-
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <div class="hero-content fantasy-container">
-        <h1 class="hero-title">Welcome to My Game Dev Journey</h1>
-        <p class="hero-subtitle">Exploring fantasy worlds, experimenting with game mechanics, and bringing ideas to life—one project at a time.</p>
-        <div class="hero-buttons">
-          <a href="#games" class="fantasy-button-fixed">See My Projects</a>
-          <a href="#contact" class="gold-button-fixed">Let's Connect</a>
-        </div>
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section fade-in-element">
+    <div class="hero-content fantasy-container">
+      <h1 class="hero-title animate-title">Welcome to My Game Dev Journey</h1>
+      <p class="hero-subtitle animate-subtitle">Exploring fantasy worlds, experimenting with game mechanics, and
+        bringing ideas to life—one project at a time.</p>
+      <div class="hero-buttons animate-buttons">
+        <a href="#games" class="fantasy-button-fixed">See My Projects</a>
+        <a href="#contact" class="gold-button-fixed">Let's Connect</a>
       </div>
-    </section>
+    </div>
+    <!-- Floating particles for hero section -->
+    <div class="hero-particles" aria-hidden="true">
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+      <span class="particle"></span>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-      <div class="fantasy-container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>Hey there! I'm <strong>Andreas Johansson</strong>, a solo indie game developer passionate about creating fantasy-inspired worlds and experimenting with game mechanics.</p>
-            <p>Right now, I'm working on learning<strong>3d Unity</strong></p>
-            <p>Game development is my creative outlet, and I enjoy learning new things, refining mechanics, and sharing my progress. Whether it’s ARPG combat, MMO-inspired worlds, or just a small passion project, I’m always diving into new ideas.</p>
-            <p>This site is where I document my journey, share updates, and hopefully connect with others who love making and playing games.</p>
+  <!-- About Section -->
+  <section id="about" class="section about-section fade-in-element">
+    <div class="fantasy-container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Hey there! I'm <strong>Andreas Johansson</strong>, a solo indie game developer passionate about creating
+            fantasy-inspired worlds and experimenting with game mechanics.</p>
+          <p>Right now, I'm working on learning <strong>3D Unity</strong></p>
+          <p>Game development is my creative outlet, and I enjoy learning new things, refining mechanics, and sharing my
+            progress. Whether it's ARPG combat, MMO-inspired worlds, or just a small passion project, I'm always diving
+            into new ideas.</p>
+          <p>This site is where I document my journey, share updates, and hopefully connect with others who love making
+            and playing games.</p>
 
-            <p>Please try my miniprojects and let me know what you think </p>
-          </div>
-          <!--
+          <p>Please try my miniprojects and let me know what you think!</p>
+        </div>
+        <!--
           <div class="about-stats">
             <div class="stat-card">
               <h3 class="stat-value">1</h3>
@@ -89,105 +140,123 @@
               <h3 class="stat-value">1</h3>
               <p class="stat-label">Game in Development</p>
             </div>-->
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
+    </div>
+  </section>
 
-    <!-- Games Section -->
-    <section id="games" class="section games-section">
-      <div class="fantasy-container">
-        <h2 class="section-title">My Games</h2>
-        <div class="games-grid">
-          <div class="game-card">
-            <div class="game-image">
-              <img src="assets/Blogheads/FantasySurvivalBloghead.png" alt="FantasySurvival Game" loading="lazy" />
-            </div>
-            <div class="game-content">
-              <h3 class="game-title">FantasySurvival</h3>
-              <p class="game-description">A brutal ARPG survival game in a fantasy world. Modular, immersive, and built from scratch.</p>
-              <a href="project-sites/FantasySurvival/" class="fantasy-button-fixed" target="_blank">Visit Project</a>
-              <a href="project-sites/FantasySurvival/progress.html" class="gold-button-fixed" target="_blank">View Progress</a>
+  <!-- Games Section -->
+  <section id="games" class="section games-section fade-in-element">
+    <div class="fantasy-container">
+      <h2 class="section-title">My Games</h2>
+      <div class="games-grid">
+        <article class="game-card">
+          <div class="game-image">
+            <span class="game-status-badge badge-development">🔨 In Development</span>
+            <img src="assets/Blogheads/FantasySurvivalBloghead.png" alt="FantasySurvival - ARPG survival game"
+              loading="lazy" />
+          </div>
+          <div class="game-content">
+            <h3 class="game-title">FantasySurvival</h3>
+            <p class="game-description">A brutal ARPG survival game in a fantasy world. Modular, immersive, and built
+              from scratch.</p>
+            <div class="game-buttons">
+              <a href="project-sites/FantasySurvival/" class="fantasy-button-fixed" target="_blank" rel="noopener">Visit
+                Project</a>
+              <a href="project-sites/FantasySurvival/progress.html" class="gold-button-fixed" target="_blank"
+                rel="noopener">View Progress</a>
             </div>
           </div>
-          
-          
-          <div class="game-card">
-            <div class="game-image">
-              <img src="assets/Blogheads/InfiniteRunner.png" alt="InfiniteRunner Game" loading="lazy" />
-            </div>
-            <div class="game-content">
-              <h3 class="game-title">InfiniteRunner</h3>
-              <p class="game-description">Race the clock and dodge chaos in this fast-paced 3D survival runner.</p>
-              <a href="games/InfiniteRunner/" class="fantasy-button-fixed" target="_blank">Play Now</a>
+        </article>
+
+        <article class="game-card">
+          <div class="game-image">
+            <span class="game-status-badge badge-playable">🎮 Play Now</span>
+            <img src="assets/Blogheads/InfiniteRunner.png" alt="InfiniteRunner - 3D survival runner game"
+              loading="lazy" />
+          </div>
+          <div class="game-content">
+            <h3 class="game-title">InfiniteRunner</h3>
+            <p class="game-description">Race the clock and dodge chaos in this fast-paced 3D survival runner.</p>
+            <div class="game-buttons">
+              <a href="games/InfiniteRunner/" class="fantasy-button-fixed" target="_blank" rel="noopener">Play Now</a>
               <a href="game-detail.html?game=infiniterunner" class="gold-button-fixed">Learn More</a>
             </div>
           </div>
-          
-          <div class="game-card">
-            <div class="game-image">
-              <img src="assets/Blogheads/RocketRacer.png" alt="RocketRacer Game" loading="lazy" />
-            </div>
-            <div class="game-content">
-              <h3 class="game-title">RocketRacer</h3>
-              <p class="game-description">A high-speed space racer built in Unity. Boost, dodge, and master cosmic tracks!</p>
-              <a href="games/RocketRacer/" class="fantasy-button-fixed" target="_blank">Play Now</a>
+        </article>
+
+        <article class="game-card">
+          <div class="game-image">
+            <span class="game-status-badge badge-playable">🎮 Play Now</span>
+            <img src="assets/Blogheads/RocketRacer.png" alt="RocketRacer - Space racing game" loading="lazy" />
+          </div>
+          <div class="game-content">
+            <h3 class="game-title">RocketRacer</h3>
+            <p class="game-description">A high-speed space racer built in Unity. Boost, dodge, and master cosmic tracks!
+            </p>
+            <div class="game-buttons">
+              <a href="games/RocketRacer/" class="fantasy-button-fixed" target="_blank" rel="noopener">Play Now</a>
               <a href="game-detail.html?game=rocketracer" class="gold-button-fixed">Learn More</a>
             </div>
           </div>
-          
-          <div class="game-card">
-            <div class="game-image">
-              <img src="assets/Blogheads/game-title-branch.png" alt="PixelJump Game" loading="lazy" />
-            </div>
-            <div class="game-content">
-              <h3 class="game-title">PixelJump</h3>
-              <p class="game-description">A platformer about a hero,his chicken and their journey through life</p>
+        </article>
+
+        <article class="game-card">
+          <div class="game-image">
+            <span class="game-status-badge badge-paused">⏸️ Paused</span>
+            <img src="assets/Blogheads/game-title-branch.png" alt="PixelJump - 2D platformer game" loading="lazy" />
+          </div>
+          <div class="game-content">
+            <h3 class="game-title">PixelJump</h3>
+            <p class="game-description">A platformer about a hero, his chicken, and their journey through life.</p>
+            <div class="game-buttons">
               <a href="game-detail.html?game=pixeljump" class="fantasy-button-fixed">Learn More</a>
             </div>
           </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="fantasy-container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="text-fantasy-gold">RemmoldGames</span>
+          <p class="footer-tagline">Crafting Digital Fantasy Since 2025</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-links-column">
+            <h4 class="footer-links-title">Navigation</h4>
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#games">Games</a>
+            <a href="index.html#about">About Dev</a>
+            <a href="blog.html">Blog</a>
+          </div>
+          <div class="footer-links-column">
+            <h4 class="footer-links-title">Connect</h4>
+            <a href="https://github.com/remmold" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/andreas-johansson-24b081320/" target="_blank">LinkedIn</a>
+          </div>
         </div>
       </div>
-    </section>
-
-
-    
-
-
-
-    <!-- Footer -->
-    <footer  id = "contact"class="footer">
-      <div class="fantasy-container">
-        <div class="footer-content">
-          <div class="footer-logo">
-            <span class="text-fantasy-gold">RemmoldGames</span>
-            <p class="footer-tagline">Crafting Digital Fantasy Since 2025</p>
-          </div>
-          <div class="footer-links">
-            <div class="footer-links-column">
-              <h4 class="footer-links-title">Navigation</h4>
-              <a href="index.html">Home</a>
-              <a href="index.html#about">About</a>
-              <a href="index.html#games">Games</a>
-              <a href="index.html#collaborators">About Dev</a>
-              <a href="blog.html">Blog</a>
-            </div>
-            <div class="footer-links-column">
-              <h4 class="footer-links-title">Connect</h4>
-              <a href="https://github.com/remmold" target="_blank">GitHub</a>
-              <a href="https://www.linkedin.com/in/andreas-johansson-24b081320/" target="_blank">LinkedIn</a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 RemmoldGames. All rights reserved.</p>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 RemmoldGames. All rights reserved.</p>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Scroll To Top Button -->
-    <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+  <!-- Scroll To Top Button -->
+  <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
 
-    <script src="scripts.js"></script>
-  </body>
+  <script src="scripts.js"></script>
+</body>
+
 </html>

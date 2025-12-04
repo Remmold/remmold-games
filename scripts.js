@@ -20,27 +20,59 @@ document.addEventListener("DOMContentLoaded", function () {
   // --- Mobile menu ---
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const mobileNav = document.querySelector(".mobile-nav");
+  const mobileNavClose = document.querySelector(".mobile-nav-close");
+  const mobileDropdownBtns = document.querySelectorAll(".mobile-dropdown-btn");
 
-  mobileMenuBtn?.addEventListener("click", function () {
-    mobileNav?.classList.toggle("active");
-    document.body.classList.toggle("menu-open");
-  });
+  function openMobileMenu() {
+    mobileNav?.classList.add("active");
+    mobileNav?.setAttribute("aria-hidden", "false");
+    mobileMenuBtn?.setAttribute("aria-expanded", "true");
+    document.body.classList.add("menu-open");
+  }
 
+  function closeMobileMenu() {
+    mobileNav?.classList.remove("active");
+    mobileNav?.setAttribute("aria-hidden", "true");
+    mobileMenuBtn?.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
+  }
+
+  mobileMenuBtn?.addEventListener("click", openMobileMenu);
+  mobileNavClose?.addEventListener("click", closeMobileMenu);
+
+  // Close on outside click
   document.addEventListener("click", function (event) {
     if (
       mobileNav?.classList.contains("active") &&
       !event.target.closest(".mobile-nav") &&
       !event.target.closest(".mobile-menu-btn")
     ) {
-      mobileNav.classList.remove("active");
-      document.body.classList.remove("menu-open");
+      closeMobileMenu();
     }
   });
 
+  // Close on link click
   document.querySelectorAll(".mobile-nav-links .nav-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileNav?.classList.remove("active");
-      document.body.classList.remove("menu-open");
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  // Mobile dropdown toggle
+  mobileDropdownBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const dropdown = this.closest(".mobile-dropdown");
+      const isExpanded = dropdown?.classList.contains("active");
+
+      // Close all other dropdowns
+      document.querySelectorAll(".mobile-dropdown").forEach((d) => {
+        d.classList.remove("active");
+        d.querySelector(".mobile-dropdown-btn")?.setAttribute("aria-expanded", "false");
+      });
+
+      // Toggle current
+      if (!isExpanded) {
+        dropdown?.classList.add("active");
+        this.setAttribute("aria-expanded", "true");
+      }
     });
   });
 
@@ -62,18 +94,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // --- Scroll animations ---
-  const animateElements = document.querySelectorAll(".fade-in-element");
-  function checkScroll() {
-    animateElements.forEach((element) => {
-      if (element.getBoundingClientRect().top < window.innerHeight * 0.9) {
-        element.classList.add("visible");
+  // --- Enhanced scroll animations with Intersection Observer ---
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px 0px -10% 0px",
+    threshold: 0.1
+  };
+
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+
+        // Trigger staggered animation for game cards
+        const gamesGrid = entry.target.querySelector(".games-grid");
+        if (gamesGrid) {
+          setTimeout(() => gamesGrid.classList.add("animated"), 100);
+        }
+
+        fadeObserver.unobserve(entry.target);
       }
     });
-  }
-  if (animateElements.length > 0) {
-    window.addEventListener("scroll", checkScroll);
-    checkScroll();
+  }, observerOptions);
+
+  // Observe all fade-in elements
+  document.querySelectorAll(".fade-in-element").forEach((el) => {
+    fadeObserver.observe(el);
+  });
+
+  // Make hero section visible immediately
+  const heroSection = document.querySelector(".hero-section");
+  if (heroSection) {
+    heroSection.classList.add("visible");
   }
 
   // --- Game detail rendering ---
@@ -179,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
         assetLink: "",
         playnowLink: "https://remmold.github.io/remmold-games/games/InfiniteRunner_v0.1/index.html",
       }
-      
+
     };
 
     const gameData = games[gameName];
@@ -219,8 +271,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <h2 class="section-title">Key Features</h2>
           <div class="features-grid">
             ${game.features
-              .map(
-                (f) => `
+          .map(
+            (f) => `
               <div class="feature-card">
                 <div class="feature-title">
                   <div class="feature-icon">${f.icon}</div>
@@ -228,8 +280,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
                 <p>${f.description}</p>
               </div>`
-              )
-              .join("")}
+          )
+          .join("")}
           </div>
         </div>
 
@@ -237,13 +289,13 @@ document.addEventListener("DOMContentLoaded", function () {
           <h2 class="section-title">Screenshots</h2>
           <div class="screenshots-grid">
             ${game.screenshots
-              .map(
-                (s) => `
+          .map(
+            (s) => `
               <div class="screenshot-item">
                 <img src="${s}" alt="Screenshot" class="clickable-screenshot"/>
               </div>`
-              )
-              .join("")}
+          )
+          .join("")}
           </div>
         </div>
 
@@ -251,15 +303,15 @@ document.addEventListener("DOMContentLoaded", function () {
           <h2 class="section-title">Development Updates</h2>
           <div class="updates-list">
             ${game.updates
-              .map(
-                (u) => `
+          .map(
+            (u) => `
               <div class="update-card">
                 <span class="update-date">${u.date}</span>
                 <h3 class="update-title">${u.title}</h3>
                 <p>${u.content}</p>
               </div>`
-              )
-              .join("")}
+          )
+          .join("")}
           </div>
         </div>
       </div>`;
