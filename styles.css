@@ -66,12 +66,16 @@ body::before {
   z-index: -1;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Cinzel', serif;
   margin-bottom: 1rem;
 }
 
-h5, h6 {
+h5,
+h6 {
   font-family: 'Marcellus', serif;
   margin-bottom: 0.5rem;
 }
@@ -329,7 +333,8 @@ img {
   text-align: center;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
   color: var(--fantasy-gold);
 }
 
@@ -492,6 +497,13 @@ img {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.about-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .about-stats {
@@ -686,7 +698,8 @@ img {
   font-weight: 500;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
   padding: 0.75rem;
   border-radius: 0.375rem;
   border: 1px solid rgba(126, 87, 194, 0.3);
@@ -696,7 +709,8 @@ img {
   transition: all 0.3s ease;
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: var(--fantasy-purple);
   box-shadow: 0 0 0 3px rgba(126, 87, 194, 0.2);
@@ -993,7 +1007,8 @@ img {
   margin-bottom: 1.5rem;
 }
 
-.game-detail-platform, .game-detail-status {
+.game-detail-platform,
+.game-detail-status {
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.875rem;
@@ -1183,49 +1198,49 @@ img {
   .fantasy-container {
     padding: 0 1.5rem;
   }
-  
+
   .fantasy-title {
     font-size: 2.5rem;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
-  
+
   .desktop-nav {
     display: flex;
     align-items: center;
     gap: 2rem;
   }
-  
+
   .mobile-menu-btn {
     display: none;
   }
-  
+
   .hero-title {
     font-size: 3rem;
   }
-  
+
   .about-content {
     grid-template-columns: 1.5fr 1fr;
   }
-  
+
   .contact-content {
     grid-template-columns: 1fr 1.5fr;
   }
-  
+
   .footer-content {
     grid-template-columns: 1fr 2fr;
   }
-  
+
   .game-detail-header {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .blog-posts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1235,19 +1250,19 @@ img {
   .fantasy-container {
     padding: 0 2rem;
   }
-  
+
   .hero-title {
     font-size: 3.5rem;
   }
-  
+
   .games-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .blog-posts-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .features-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1288,7 +1303,8 @@ img {
   max-width: 800px;
   margin: 50px auto;
   padding: 30px;
-  background: #1c1f26; /* Dark background */
+  background: #1c1f26;
+  /* Dark background */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -1330,19 +1346,22 @@ h1 {
 
 .post-image {
   width: 100%;
-  height: 180px;  /* Adjust height to keep cards uniform */
+  height: 180px;
+  /* Adjust height to keep cards uniform */
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background: #222; /* Placeholder background */
+  background: #222;
+  /* Placeholder background */
 }
 
 .post-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Makes sure images are scaled properly */
+  object-fit: cover;
+  /* Makes sure images are scaled properly */
   border-radius: 10px;
 }
 
@@ -1355,6 +1374,7 @@ h1 {
   text-align: left;
   max-width: 90%;
 }
+
 .fantasy-subtle {
   background-color: #1e1e1e;
   color: #d4b27a;
@@ -1380,13 +1400,15 @@ h1 {
 /* 🔮 Glow animation */
 @keyframes fantasyPulse {
   0% {
-      box-shadow: 0 0 0px rgba(212, 178, 122, 0.1);
+    box-shadow: 0 0 0px rgba(212, 178, 122, 0.1);
   }
+
   50% {
-      box-shadow: 0 0 6px rgba(212, 178, 122, 0.3);
+    box-shadow: 0 0 6px rgba(212, 178, 122, 0.3);
   }
+
   100% {
-      box-shadow: 0 0 0px rgba(212, 178, 122, 0.1);
+    box-shadow: 0 0 0px rgba(212, 178, 122, 0.1);
   }
 }
 
@@ -1513,25 +1535,59 @@ h1 {
   animation: floatParticle 15s infinite ease-in-out;
 }
 
-.particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; animation-duration: 12s; }
-.particle:nth-child(2) { left: 25%; top: 60%; animation-delay: 2s; animation-duration: 18s; }
-.particle:nth-child(3) { left: 50%; top: 30%; animation-delay: 4s; animation-duration: 14s; }
-.particle:nth-child(4) { left: 70%; top: 70%; animation-delay: 1s; animation-duration: 16s; }
-.particle:nth-child(5) { left: 85%; top: 40%; animation-delay: 3s; animation-duration: 20s; }
+.particle:nth-child(1) {
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+  animation-duration: 12s;
+}
+
+.particle:nth-child(2) {
+  left: 25%;
+  top: 60%;
+  animation-delay: 2s;
+  animation-duration: 18s;
+}
+
+.particle:nth-child(3) {
+  left: 50%;
+  top: 30%;
+  animation-delay: 4s;
+  animation-duration: 14s;
+}
+
+.particle:nth-child(4) {
+  left: 70%;
+  top: 70%;
+  animation-delay: 1s;
+  animation-duration: 16s;
+}
+
+.particle:nth-child(5) {
+  left: 85%;
+  top: 40%;
+  animation-delay: 3s;
+  animation-duration: 20s;
+}
 
 @keyframes floatParticle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) translateX(0) scale(1);
     opacity: 0.4;
   }
+
   25% {
     transform: translateY(-30px) translateX(15px) scale(1.2);
     opacity: 0.7;
   }
+
   50% {
     transform: translateY(-15px) translateX(-10px) scale(0.8);
     opacity: 0.5;
   }
+
   75% {
     transform: translateY(-40px) translateX(20px) scale(1.1);
     opacity: 0.6;
@@ -1556,6 +1612,7 @@ h1 {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1604,9 +1661,11 @@ h1 {
     transform: scale(0);
     opacity: 0;
   }
+
   70% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
@@ -1642,8 +1701,8 @@ h1 {
 .fade-in-element {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-in-element.visible {
@@ -1658,10 +1717,21 @@ h1 {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.games-grid.animated .game-card:nth-child(1) { transition-delay: 0.1s; }
-.games-grid.animated .game-card:nth-child(2) { transition-delay: 0.2s; }
-.games-grid.animated .game-card:nth-child(3) { transition-delay: 0.3s; }
-.games-grid.animated .game-card:nth-child(4) { transition-delay: 0.4s; }
+.games-grid.animated .game-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.games-grid.animated .game-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.games-grid.animated .game-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.games-grid.animated .game-card:nth-child(4) {
+  transition-delay: 0.4s;
+}
 
 .games-grid.animated .game-card {
   opacity: 1;
@@ -1677,12 +1747,10 @@ h1 {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
   transition: left 0.5s ease;
 }
 
@@ -1711,8 +1779,15 @@ h1 {
 
 /* Scroll indicator for hero */
 @keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 /* Accessibility - Focus styles */
@@ -1724,6 +1799,7 @@ button:focus-visible {
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
+
   .particle,
   .animate-title,
   .animate-subtitle,
@@ -1734,12 +1810,12 @@ button:focus-visible {
     animation: none;
     transition: none;
   }
-  
+
   .fade-in-element {
     opacity: 1;
     transform: none;
   }
-  
+
   .games-grid .game-card {
     opacity: 1;
     transform: none;
