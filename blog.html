@@ -1,139 +1,159 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog - RemmoldGames</title>
-    <meta name="description" content="Fantasy game development blog" />
-    <meta name="author" content="RemmoldGames" />
-    <meta property="og:image" content="/og-image.png" />
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - RemmoldGames</title>
+  <meta name="description" content="Fantasy game development blog" />
+  <meta name="author" content="RemmoldGames" />
+  <meta property="og:image" content="/og-image.png" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
 
-  <body>
-<!-- Navbar using relative paths -->
-<nav id="navbar" class="navbar">
-  <div class="fantasy-container nav-container">
-    <a href="index.html" class="nav-logo">
-      <div class="logo-text">
-        <span class="text-fantasy-gold">RemmoldGames</span>
+<body>
+  <!-- Navbar using relative paths -->
+  <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="fantasy-container nav-container">
+      <a href="index.html" class="nav-logo" aria-label="RemmoldGames Home">
+        <div class="logo-text">
+          <span class="text-fantasy-gold">RemmoldGames</span>
+        </div>
+      </a>
+
+      <div class="nav-links desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <div class="dropdown">
+          <button class="nav-link dropdown-btn" aria-haspopup="true" aria-expanded="false">Games <i
+              class="dropdown-icon">▼</i></button>
+          <div class="dropdown-content" role="menu">
+            <a href="game-detail.html?game=pixeljump" role="menuitem">PixelJump</a>
+            <a href="game-detail.html?game=rocketracer" role="menuitem">RocketRacer</a>
+            <a href="game-detail.html?game=infiniterunner" role="menuitem">InfiniteRunner</a>
+          </div>
+        </div>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <div class="dropdown">
+          <button class="nav-link dropdown-btn" aria-haspopup="true" aria-expanded="false">My Projects <i
+              class="dropdown-icon">▼</i></button>
+          <div class="dropdown-content" role="menu">
+            <a href="http://135.236.154.112:80" target="_blank" role="menuitem">Learn to Code</a>
+            <a href="http://135.236.154.112:8080" target="_blank" role="menuitem">Interactive CV</a>
+            <a href="http://135.236.154.112:3000" target="_blank" role="menuitem">FFXIV Companion</a>
+          </div>
+        </div>
+        <a href="index.html#contact" class="nav-link">Connect</a>
+        <a href="project-sites/FantasySurvival/" class="nav-link fantasy-highlight">✨ Fantasy Survival</a>
       </div>
-    </a>
 
-    <div class="nav-links desktop-nav">
+      <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="menu-icon">☰</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="mobile-nav" aria-hidden="true">
+    <button class="mobile-nav-close" aria-label="Close navigation menu">✕</button>
+    <div class="mobile-nav-links">
       <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#about" class="nav-link">About</a>
-      <div class="dropdown">
-        <button class="nav-link dropdown-btn">Games <i class="dropdown-icon">▼</i></button>
-        <div class="dropdown-content">
+      <div class="mobile-dropdown">
+        <button class="mobile-dropdown-btn" aria-expanded="false">Games <i class="dropdown-icon">▼</i></button>
+        <div class="mobile-dropdown-content">
           <a href="game-detail.html?game=pixeljump">PixelJump</a>
           <a href="game-detail.html?game=rocketracer">RocketRacer</a>
           <a href="game-detail.html?game=infiniterunner">InfiniteRunner</a>
         </div>
       </div>
       <a href="blog.html" class="nav-link">Blog</a>
+      <div class="mobile-dropdown">
+        <button class="mobile-dropdown-btn" aria-expanded="false">My Projects <i class="dropdown-icon">▼</i></button>
+        <div class="mobile-dropdown-content">
+          <a href="http://135.236.154.112:80" target="_blank">Learn to Code</a>
+          <a href="http://135.236.154.112:8080" target="_blank">Interactive CV</a>
+          <a href="http://135.236.154.112:3000" target="_blank">FFXIV Companion</a>
+        </div>
+      </div>
       <a href="index.html#contact" class="nav-link">Connect</a>
+      <a href="project-sites/FantasySurvival/" class="nav-link fantasy-highlight">✨ Fantasy Survival</a>
     </div>
-
-    <button class="mobile-menu-btn" aria-label="Toggle menu">
-      <span class="menu-icon">☰</span>
-    </button>
   </div>
-</nav>
 
+  <!-- Blog Header -->
+  <header class="blog-header">
+    <div class="fantasy-container">
+      <h1 class="fantasy-title">Chronicles of Development</h1>
+      <p class="blog-subtitle">Updates, insights, and tales from my game development journey</p>
+    </div>
+  </header>
 
-
-
-
-
-
-      <!-- Mobile Navigation -->
-      <div class="mobile-nav">
-        <div class="mobile-nav-links">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="index.html#about" class="nav-link">About</a>
-          <button class="mobile-dropdown-btn">
-            Games <i class="dropdown-icon">▼</i>
-          </button>
-          <div class="mobile-dropdown-content hidden">
-            <a href="index.html#games">PixelJump</a>
-          </div>
-          <a href="index.html#collaborators" class="nav-link">Collaborators</a>
-          <a href="blog.html" class="nav-link active">Blog</a>
-          <a href="index.html#contact" class="nav-link">Contact</a>
+  <!-- Blog Content -->
+  <section class="blog-section">
+    <div class="fantasy-container">
+      <!-- Featured Post -->
+      <div class="featured-post">
+        <div class="featured-post-image">
+          <img src="https://placehold.co/1200x600?text=Featured+Post" alt="Featured blog post" loading="lazy">
+        </div>
+        <div class="featured-post-content">
+          <span class="post-date">October 15, 2023</span>
+          <h2 class="post-title">The Art of Pixel Animation</h2>
+          <p class="post-excerpt">Discover how we bring our retro-styled characters to life through the magic of pixel
+            animation techniques...</p>
+          <a href="#" class="fantasy-button-fixed">Read More</a>
         </div>
       </div>
-    </nav>
 
-    <!-- Blog Header -->
-    <header class="blog-header">
-      <div class="fantasy-container">
-        <h1 class="fantasy-title">Chronicles of Development</h1>
-        <p class="blog-subtitle">Updates, insights, and tales from my game development journey</p>
-      </div>
-    </header>
+      <!-- Blog Posts Grid (JavaScript will insert posts here) -->
+      <div class="blog-posts-grid" id="blogPostsContainer"></div>
 
-    <!-- Blog Content -->
-    <section class="blog-section">
-      <div class="fantasy-container">
-        <!-- Featured Post -->
-        <div class="featured-post">
-          <div class="featured-post-image">
-            <img src="https://placehold.co/1200x600?text=Featured+Post" alt="Featured blog post" loading="lazy">
-          </div>
-          <div class="featured-post-content">
-            <span class="post-date">October 15, 2023</span>
-            <h2 class="post-title">The Art of Pixel Animation</h2>
-            <p class="post-excerpt">Discover how we bring our retro-styled characters to life through the magic of pixel animation techniques...</p>
-            <a href="#" class="fantasy-button-fixed">Read More</a>
-          </div>
-        </div>
-
-       <!-- Blog Posts Grid (JavaScript will insert posts here) -->
-       <div class="blog-posts-grid" id="blogPostsContainer"></div>
-
-        
-       
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="fantasy-container">
-        <div class="footer-content">
-          <div class="footer-logo">
-            <span class="text-fantasy-gold">RemmoldGames</span>
-            <p class="footer-tagline">Crafting Digital Fantasy Since 2025</p>
-          </div>
-          <div class="footer-links">
-            <div class="footer-links-column">
-              <h4 class="footer-links-title">Navigation</h4>
-              <a href="index.html">Home</a>
-              <a href="index.html#about">About</a>
-              <a href="index.html#games">Games</a>
-              <a href="index.html#collaborators">About Dev</a>
-              <a href="blog.html">Blog</a>
-              <a href="index.html#contact">Connect</a>
+      <!-- Footer -->
+      <footer id="contact" class="footer">
+        <div class="fantasy-container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <span class="text-fantasy-gold">RemmoldGames</span>
+              <p class="footer-tagline">Crafting Digital Fantasy Since 2025</p>
             </div>
-            <div class="footer-links-column">
-              <h4 class="footer-links-title">Connect</h4>
-              <a href="https://github.com/remmold" target="_blank">GitHub</a>
-              <a href="https://www.linkedin.com/in/andreas-johansson-24b081320/" target="_blank">LinkedIn</a>
+            <div class="footer-links">
+              <div class="footer-links-column">
+                <h4 class="footer-links-title">Navigation</h4>
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#games">Games</a>
+                <a href="index.html#about">About Dev</a>
+                <a href="blog.html">Blog</a>
+              </div>
+              <div class="footer-links-column">
+                <h4 class="footer-links-title">My Projects</h4>
+                <a href="http://135.236.154.112:80" target="_blank">Learn to Code</a>
+                <a href="http://135.236.154.112:8080" target="_blank">Interactive CV</a>
+                <a href="http://135.236.154.112:3000" target="_blank">FFXIV Companion</a>
+              </div>
+              <div class="footer-links-column">
+                <h4 class="footer-links-title">Connect</h4>
+                <a href="https://github.com/remmold" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/andreas-johansson-24b081320/" target="_blank">LinkedIn</a>
+              </div>
             </div>
           </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 RemmoldGames. All rights reserved.</p>
+          </div>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 RemmoldGames. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+      </footer>
 
-    <!-- Scroll To Top Button -->
-    <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+      <!-- Scroll To Top Button -->
+      <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
 
-    <script src="scripts.js"></script>
-  </body>
+      <script src="scripts.js"></script>
+</body>
+
 </html>
