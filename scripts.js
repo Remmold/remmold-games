@@ -135,112 +135,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const gameName = urlParams.get("game")?.toLowerCase();
 
-    const games = {
-      pixeljump: {
-        id: 1,
-        title: "PixelJump",
-        image: "assets/Blogheads/game-title-branch.png",
-        description: "PixelJump is a challenging platformer...",
-        longDescription:
-          "PixelJump is a fast-paced 2D platformer where players embark on a daring quest...",
-        platforms: ["PC"],
-        status: "Paused",
-        releaseDate: "TBD",
-        tags: ["Platformer", "Pixel Art", "Indie", "Action", "Single Player"],
-        features: [
-          { icon: "⚡", title: "Dynamic Weathereffects", description: "Upcoming effects..." },
-          { icon: "🎮", title: "Multiple inputs", description: "Supports KB+Mouse and controller" },
-          { icon: "🏆", title: "Achievement System", description: "Currently not a thing" },
-          { icon: "🎵", title: "Experimental music", description: "Dynamic music testing" },
-        ],
-        screenshots: [
-          "assets/Screenshots/TitleScreen.png",
-          "assets/Screenshots/nighttime.png",
-          "assets/Screenshots/treehouse.png",
-          "assets/Blogheads/game-title-branch.png",
-        ],
-        updates: [
-          { date: "March 20, 2025", title: "Better Cycles", content: "Sun/moon improved." },
-          { date: "March 17, 2025", title: "Let there be light", content: "Sun, moon, torches added." },
-          { date: "March 15, 2025", title: "Menus and volumecontrol", content: "Settings menu created." },
-          { date: "March 14, 2025", title: "Website Up", content: "RemmoldGames is live!" },
-        ],
-        downloadLink:
-          "https://github.com/Remmold/remmold-games/releases/latest/download/PixelJumpWindows_v0.zip",
-        assetLink:
-          "https://assetstore.unity.com/packages/2d/environments/2d-platformer-tileset-173155",
-      },
+    // Load game data from external JSON
+    fetch("games-data.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load game data");
+        return res.json();
+      })
+      .then((games) => {
+        const gameData = games[gameName];
 
-      rocketracer: {
-        id: 2,
-        title: "RocketRacer",
-        image: "assets/Blogheads/RocketRacer.png",
-        description: "Fast-paced Unity WebGL game. Fly, dodge, and win.",
-        longDescription:
-          "RocketRacer is a high-speed obstacle-dodging WebGL game built in Unity...",
-        platforms: ["WebGL"],
-        status: "Playable Prototype",
-        releaseDate: "March 31, 2025",
-        tags: ["WebGL", "Unity", "Prototype", "3D", "Indie"],
-        features: [
-          { icon: "🚀", title: "Speed!", description: "Zippy movement and physics-based control." },
-          { icon: "🌌", title: "Stylized World", description: "A small looping course in the stars." },
-        ],
-        screenshots: [
-          "assets/Blogheads/RocketRacer.png",
-
-        ],
-        updates: [
-          {
-            date: "April 1, 2025",
-            title: "WebGL Launch!",
-            content: "RocketRacer is now playable in your browser on GitHub Pages.",
-          },
-        ],
-        downloadLink: "",
-        assetLink: "",
-        playnowLink: "https://remmold.github.io/remmold-games/games/RocketRacer/index.html",
-      },
-      infiniterunner: {
-        id: 3,
-        title: "InfiniteRunner",
-        image: "assets/Blogheads/InfiniteRunner.png",
-        description: "Dodge or die in this Unity WebGL survival sprint.",
-        longDescription:
-          "InfiniteRunner is a fast-paced 3D prototype built in Unity, where the player races against time while dodging an ever-increasing wave of flying obstacles. Built as a physics and timing challenge, it tests your reflexes and decision-making under pressure.",
-        platforms: ["WebGL"],
-        status: "Playable Prototype",
-        releaseDate: "April 8, 2025",
-        tags: ["WebGL", "Unity", "Prototype", "3D", "Reflex"],
-        features: [
-          { icon: "⏱️", title: "Time Pressure", description: "Survive as long as you can against incoming chaos." },
-          { icon: "💥", title: "Flying Obstacles", description: "Physics-based objects hurled at you with increasing speed." },
-        ],
-        screenshots: [
-          "assets/Blogheads/InfiniteRunner.png",
-          "assets/Screenshots/InfiniteRunnerScreenshots/InfiniteRunner_sc_1.png"
-        ],
-        updates: [
-          {
-            date: "April 8, 2025",
-            title: "WebGL Launch!",
-            content: "InfiniteRunner is now live and playable in-browser on GitHub Pages. Try to survive the onslaught!",
-          },
-        ],
-        downloadLink: "https://github.com/Remmold/remmold-games/releases/download/v0.1InfiniteRunnerWindows/InfiniteRunnerWindows.zip",
-        assetLink: "",
-        playnowLink: "https://remmold.github.io/remmold-games/games/InfiniteRunner_v0.1/index.html",
-      }
-
-    };
-
-    const gameData = games[gameName];
-
-    if (gameData) {
-      renderGameDetail(gameData);
-    } else {
-      gameDetailContainer.innerHTML = `<div class="fantasy-container"><h2>Game not found</h2><p>Check the URL or return to the <a href="index.html">home page</a>.</p></div>`;
-    }
+        if (gameData) {
+          renderGameDetail(gameData);
+        } else {
+          gameDetailContainer.innerHTML = `<div class="fantasy-container"><h2>Game not found</h2><p>Check the URL or return to the <a href="index.html">home page</a>.</p></div>`;
+        }
+      })
+      .catch((error) => {
+        console.error("Error loading game data:", error);
+        gameDetailContainer.innerHTML = `<div class="fantasy-container"><h2>Error loading game</h2><p>Please try again later or return to the <a href="index.html">home page</a>.</p></div>`;
+      });
 
     function renderGameDetail(game) {
       const content = `
@@ -262,8 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
             ${game.downloadLink ? `<a href="${game.downloadLink}" class="fantasy-button-fixed">Download Windows Demo</a>` : ""}
             ${game.assetLink ? `<a href="${game.assetLink}" class="fantasy-button-fixed" target="_blank">Assets</a>` : ""}
             ${game.playnowLink ? `<a href="${game.playnowLink}" class="fantasy-button-fixed" target="_blank" rel="noopener noreferrer">Play Now in Browser</a>` : ''}
-
-
           </div>
         </div>
 
@@ -339,7 +250,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // --- Blog preview loader ---
   fetch("blog-posts.json")
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to load blog posts");
+      return res.json();
+    })
     .then((posts) => {
       if (!Array.isArray(posts) || posts.length === 0) return;
 
@@ -379,29 +293,11 @@ document.addEventListener("DOMContentLoaded", function () {
           )
           .join("");
       }
+    })
+    .catch((error) => {
+      console.error("Error loading blog posts:", error);
     });
 
   // --- Animate page load ---
   document.body.classList.add("fade-in");
 });
-
-// --- Add animation styles ---
-const styleSheet = document.createElement("style");
-styleSheet.textContent = `
-.fade-in { animation: fadeIn 0.5s ease-out; }
-.fade-in-element {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-.fade-in-element.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-body.menu-open { overflow: hidden; }
-`;
-document.head.appendChild(styleSheet);
