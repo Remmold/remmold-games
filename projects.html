@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - RemmoldGames</title>
+    <meta name="description"
+        content="Explore my web development projects and other coding endeavors alongside my game development journey." />
+    <meta name="author" content="Andreas Johansson" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Projects - RemmoldGames" />
+    <meta property="og:description" content="Explore my web development projects and other coding endeavors." />
+    <meta property="og:url" content="https://remmold.github.io/remmold-games/projects.html" />
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Marcellus&family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="fantasy-container nav-container">
+            <a href="index.html" class="nav-logo" aria-label="RemmoldGames Home">
+                <div class="logo-text">
+                    <span class="text-fantasy-gold">RemmoldGames</span>
+                </div>
+            </a>
+
+            <div class="nav-links desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <div class="dropdown">
+                    <button class="nav-link dropdown-btn" aria-haspopup="true" aria-expanded="false">Games <i
+                            class="dropdown-icon">▼</i></button>
+                    <div class="dropdown-content" role="menu">
+                        <a href="game-detail.html?game=pixeljump" role="menuitem">PixelJump</a>
+                        <a href="game-detail.html?game=rocketracer" role="menuitem">RocketRacer</a>
+                        <a href="game-detail.html?game=infiniterunner" role="menuitem">InfiniteRunner</a>
+                    </div>
+                </div>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <div class="dropdown">
+                    <a href="projects.html" class="nav-link dropdown-btn active">My Projects <i
+                            class="dropdown-icon">▼</i></a>
+                    <div class="dropdown-content" role="menu">
+                        <a href="http://135.236.154.112:80" target="_blank" role="menuitem">Learn to Code</a>
+                        <a href="http://135.236.154.112:8080" target="_blank" role="menuitem">Interactive CV</a>
+                        <a href="http://135.236.154.112:3000" target="_blank" role="menuitem">FFXIV Companion</a>
+                        <a href="http://paltorparnstra.se" target="_blank" role="menuitem">Påltorpans Trä</a>
+                    </div>
+                </div>
+                <a href="index.html#contact" class="nav-link">Connect</a>
+                <a href="project-sites/FantasySurvival/" class="nav-link fantasy-highlight" target="_blank">✨ Fantasy
+                    Survival</a>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="menu-icon">☰</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" aria-hidden="true">
+        <button class="mobile-nav-close" aria-label="Close navigation menu">✕</button>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn" aria-expanded="false">Games <i class="dropdown-icon">▼</i></button>
+                <div class="mobile-dropdown-content">
+                    <a href="game-detail.html?game=pixeljump">PixelJump</a>
+                    <a href="game-detail.html?game=rocketracer">RocketRacer</a>
+                    <a href="game-detail.html?game=infiniterunner">InfiniteRunner</a>
+                </div>
+            </div>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <div class="mobile-dropdown">
+                <div class="mobile-dropdown-header">
+                    <a href="projects.html" class="nav-link">My Projects</a>
+                    <button class="mobile-dropdown-btn" aria-expanded="false">▼</button>
+                </div>
+                <div class="mobile-dropdown-content">
+                    <a href="http://135.236.154.112:80" target="_blank">Learn to Code</a>
+                    <a href="http://135.236.154.112:8080" target="_blank">Interactive CV</a>
+                    <a href="http://135.236.154.112:3000" target="_blank">FFXIV Companion</a>
+                    <a href="http://paltorparnstra.se" target="_blank">Påltorpans Trä</a>
+                </div>
+            </div>
+            <a href="index.html#contact" class="nav-link">Connect</a>
+            <a href="project-sites/FantasySurvival/" class="nav-link fantasy-highlight" target="_blank">✨ Fantasy
+                Survival</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="page-header" style="padding-top: 8rem; padding-bottom: 2rem; text-align: center;">
+        <div class="fantasy-container">
+            <h1 class="fantasy-title animate-title" style="font-size: 3rem; margin-bottom: 1rem;">My Web Projects</h1>
+            <p class="hero-subtitle animate-subtitle" style="max-width: 700px; margin: 0 auto; opacity: 0.9;">
+                Beyond game development, I build web applications and digital tools. From learning platforms to utility
+                apps, here is my portfolio of coding projects.
+            </p>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section fade-in-element">
+        <div class="fantasy-container">
+            <div class="games-grid">
+
+                <!-- Learn to Code -->
+                <article class="game-card">
+                    <div class="game-image"
+                        style="background: var(--fantasy-navy); display: flex; align-items: center; justify-content: center; height: auto; aspect-ratio: 16/9; overflow: hidden;">
+                        <div style="font-size: 4rem;">💻</div>
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Learn to Code</h3>
+                        <p class="game-description">A platform dedicated to my journey and resources for learning
+                            programming, specifically tailored for game development enthusiasts.</p>
+                        <div class="game-buttons">
+                            <a href="http://135.236.154.112:80" class="fantasy-button-fixed" target="_blank"
+                                rel="noopener">Visit Project</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Interactive CV -->
+                <article class="game-card">
+                    <div class="game-image"
+                        style="background: var(--fantasy-navy); display: flex; align-items: center; justify-content: center; height: auto; aspect-ratio: 16/9; overflow: hidden;">
+                        <div style="font-size: 4rem;">📄</div>
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Interactive CV</h3>
+                        <p class="game-description">An interactive, web-based curriculum vitae showcasing my
+                            professional skills, experience, and certifications in a modern format.</p>
+                        <div class="game-buttons">
+                            <a href="http://135.236.154.112:8080" class="fantasy-button-fixed" target="_blank"
+                                rel="noopener">View CV</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FFXIV Companion -->
+                <article class="game-card">
+                    <div class="game-image"
+                        style="background: var(--fantasy-navy); display: flex; align-items: center; justify-content: center; height: auto; aspect-ratio: 16/9; overflow: hidden;">
+                        <div style="font-size: 4rem;">💰</div>
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">FFXIV Companion</h3>
+                        <p class="game-description">A utility application for Final Fantasy XIV players, featuring
+                            gathering timers, crafting guides, and market board data.</p>
+                        <div class="game-buttons">
+                            <a href="http://135.236.154.112:3000" class="fantasy-button-fixed" target="_blank"
+                                rel="noopener">Open App</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Påltorpans Trä -->
+                <article class="game-card">
+                    <div class="game-image"
+                        style="background: var(--fantasy-navy); display: flex; align-items: center; justify-content: center; height: auto; aspect-ratio: 16/9; overflow: hidden;">
+                        <div style="font-size: 4rem;">🌲</div>
+                    </div>
+                    <div class="game-content">
+                        <h3 class="game-title">Påltorpans Trä</h3>
+                        <p class="game-description">A business website for a local carpentry and wood processing
+                            service, showcasing services and contact information.</p>
+                        <div class="game-buttons">
+                            <a href="http://paltorparnstra.se" class="fantasy-button-fixed" target="_blank"
+                                rel="noopener">Visit Site</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="fantasy-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="text-fantasy-gold">RemmoldGames</span>
+                    <p class="footer-tagline">Crafting Digital Fantasy Since 2025</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4 class="footer-links-title">Navigation</h4>
+                        <a href="index.html">Home</a>
+                        <a href="index.html#about">About</a>
+                        <a href="index.html#games">Games</a>
+                        <a href="index.html#about">About Dev</a>
+                        <a href="blog.html">Blog</a>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4 class="footer-links-title">My Projects</h4>
+                        <a href="http://135.236.154.112:80" target="_blank">Learn to Code</a>
+                        <a href="http://135.236.154.112:8080" target="_blank">Interactive CV</a>
+                        <a href="http://135.236.154.112:3000" target="_blank">FFXIV Companion</a>
+                        <a href="http://paltorparnstra.se" target="_blank">Påltorpans Trä</a>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4 class="footer-links-title">Connect</h4>
+                        <a href="https://github.com/remmold" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/andreas-johansson-24b081320/" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RemmoldGames. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll To Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top-btn">↑</button>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
